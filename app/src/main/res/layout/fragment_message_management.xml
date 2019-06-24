@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/title_item"></include>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="false"
+            android:scrollbarSize="@dimen/scrolWidth"
+            android:scrollbarThumbVertical="@color/viewfinder_mask"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_casesearch_01"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:text="@string/pName"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                    <EditText
+                        android:id="@+id/edit_casesearch_Name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/patient_select_name"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                    />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_casesearch_02"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:text="@string/RequiredPhone"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                    <EditText
+                        android:id="@+id/edit_casesearch_tel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/case_select_telephoen_hint"
+                        android:inputType="number"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_casesearch_03"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize"
+                        android:text="@string/localPhone"/>
+
+                    <EditText
+                        android:id="@+id/edit_casesearch_01"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/patient_select_medical_record_number"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:inputType="number"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_casesearch_04"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize"
+                        android:text="@string/RequiredID"/>
+
+                    <EditText
+                        android:id="@+id/edit_casesearch_02"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="4"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/patient_select_ID"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_casesearch_05"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize"
+                        android:text="@string/patient_select_data"/>
+
+                    <TextView
+                        android:id="@+id/edit_startdate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/case_select_date_begin"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize"
+                        android:inputType="number"
+                        android:maxLines="3"
+                        />
+
+                    <TextView
+                        android:id="@+id/edit_enddate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="2"
+                        android:background="@drawable/edittext_select"
+                        android:gravity="center"
+                        android:hint="@string/case_select_date_end"
+                        android:paddingBottom="2dp"
+                        android:paddingTop="2dp"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/textViewNameSize"
+                        android:inputType="number"
+                        android:maxLines="3"
+                        />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_casesearch_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/btn_bg"
+                        android:text="@string/patient_select"
+                        android:textAllCaps="false" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

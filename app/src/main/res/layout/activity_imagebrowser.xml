@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111">
+
+    <com.activity.ViewPagerFixed
+        android:id="@+id/id_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/id_index"
+        android:layout_width="140dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="#aa535353"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textColor="#f0f0f0" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="save"
+        android:scaleType="fitCenter"
+        android:text="下载"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/trash"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="34dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/button_background"-->
+        <!--android:clickable="true"-->
+        <!--android:onClick="trash"-->
+        <!--android:scaleType="fitCenter"-->
+        <!--android:src="@drawable/trash"-->
+        <!--android:textAllCaps="false" />-->
+
+</RelativeLayout>

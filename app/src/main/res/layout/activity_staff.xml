@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/title_bar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/doctorid"
+                    android:gravity="center"/>
+                <EditText
+                    android:id="@+id/et_docId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    />
+            </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp">
+
+                    <Button
+                        android:id="@+id/bt_ftp_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/btn_bg"
+                        android:text="@string/button_cancel"
+                        android:textAllCaps="false" />
+
+                    <Button
+                        android:id="@+id/bt_ftp_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/btn_bg"
+                        android:text="@string/save_wifi"
+                        android:textAllCaps="false" />
+                </RelativeLayout>
+
+        </LinearLayout>
+
+          <!--<RelativeLayout-->
+              <!--android:layout_width="match_parent"-->
+              <!--android:layout_height="@dimen/LinerHeight"-->
+              <!--android:layout_alignParentBottom="true"-->
+              <!--android:background="@drawable/text_service_color1"-->
+              <!--&gt;-->
+              <!--<CheckBox-->
+                  <!--android:id="@+id/check_staff_info"-->
+                  <!--android:layout_width="wrap_content"-->
+                  <!--android:layout_height="wrap_content"-->
+                  <!--android:layout_centerVertical="true"-->
+                  <!--android:text="@string/staff_skip_check"-->
+                  <!--android:textSize="@dimen/textSizetitle"-->
+                  <!--/>-->
+
+              <!--<Button-->
+                  <!--android:id="@+id/saveBtn"-->
+                  <!--android:layout_width="wrap_content"-->
+                  <!--android:layout_height="40dp"-->
+                  <!--android:layout_marginRight="10dp"-->
+                  <!--android:layout_centerInParent="true"-->
+                  <!--android:text="@string/staff_sure"-->
+                  <!--android:textAllCaps="false"-->
+                  <!--android:textSize="@dimen/textSizetitle"-->
+                  <!--android:layout_alignParentRight="true"-->
+                  <!--android:layout_centerVertical="true"-->
+                  <!--android:background="@drawable/btn_bg"-->
+
+                  <!--/>-->
+
+
+          <!--</RelativeLayout>-->
+
+
+
+</RelativeLayout>

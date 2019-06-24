@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+   >
+    <include android:id="@+id/ll_top" layout="@layout/title_item"></include>
+
+
+    <TextView
+        android:id="@+id/tv_docId"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/ll_top"
+        />
+
+
+    <!--<LinearLayout-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+        <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+        <!--android:layout_marginTop="@dimen/adminTop"-->
+        <!--android:background="@drawable/tablelayout_bg_item"-->
+        <!--android:padding="2dp"-->
+        <!--android:layout_weight="1.5"-->
+        <!--android:visibility="gone">-->
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1.5"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+        <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+        <!--android:layout_marginTop="@dimen/adminTop"-->
+        <!--android:background="@drawable/tablelayout_bg_item"-->
+        <!--android:padding="2dp">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+                <!--android:layout_marginRight="@dimen/nameSizeLive">-->
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:text="@string/MandatoryField"-->
+                    <!--android:textSize="@dimen/textViewNameSize"-->
+                    <!--/>-->
+                <!--<Spinner-->
+                    <!--android:id="@+id/sp_field"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="6"></Spinner>-->
+
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+                <!--android:layout_marginRight="@dimen/nameSizeLive">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="已选必填字段："-->
+                    <!--android:textSize="@dimen/nameSizeLive"-->
+                    <!--/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_haveField"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="@dimen/nameSizeLive"-->
+                    <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+                    <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:gravity="bottom">-->
+            <!--<Button-->
+                <!--android:id="@+id/bt_field"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+                <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+                <!--android:layout_marginTop="@dimen/adminTop"-->
+                <!--android:text="@string/saveField"-->
+                <!--android:background="@drawable/btn_bg"/>-->
+        <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:gravity="bottom"-->
+        <!--android:layout_weight="3"-->
+        <!--android:layout_marginBottom="@dimen/marginTop">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/bt_out"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/outMessage"-->
+            <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+            <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+            <!--android:layout_marginTop="@dimen/adminTop"-->
+            <!--android:background="@drawable/btn_bg"-->
+            <!--android:visibility="gone"-->
+            <!--/>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/nameSizeLive"-->
+            <!--android:layout_marginRight="@dimen/nameSizeLive"-->
+            <!--android:layout_marginTop="@dimen/adminTop"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/bt_delete"-->
+                <!--android:background="@drawable/btn_bg"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/delete"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:visibility="gone"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+<!--</LinearLayout>-->
+    <!---->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dp_15"
+            android:gravity="center"/>
+
+        <com.white.progressview.CircleProgressView
+            android:id="@+id/circle_progress_normal"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            android:progress="0"
+            app:progressNormalColor="@color/weakRed"
+            app:progressNormalSize="20dp"
+            app:progressReachColor="@color/lightRed"
+            app:progressReachSize="20dp"
+            app:progressTextSize="35dp"
+            app:radius="100dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_commit"
+        android:background="@drawable/btn_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/commitData"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/nameSizeLive"
+        android:layout_marginRight="@dimen/nameSizeLive"
+        />
+
+</RelativeLayout>

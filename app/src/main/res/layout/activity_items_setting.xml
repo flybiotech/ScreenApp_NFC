@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.screening.activity.BarcodeSettingActivity"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:background="#fff" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/tablelayout_bg_item"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:paddingTop="@dimen/dp_1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="HPV"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tablelayout_bg_item"
+                    android:padding="@dimen/dp_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="标识" />
+
+                        <EditText
+                            android:id="@+id/et_hpv"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/dp_15"
+                            android:layout_weight="5"
+                            android:hint="@string/RequiredHPV_Mark"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:maxLength="5"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:background="@drawable/edittext_select" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="位数" />
+
+                            <EditText
+                                android:id="@+id/et_hpv_size"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:textSize="@dimen/dp_15"
+                                android:layout_weight="5"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:hint="@string/RequiredHPV_size"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:background="@drawable/edittext_select" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="状态" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="禁用" />
+
+                                <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/switch_hpv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@id/tx_lamp0"
+                                    app:sb_checked_color="@color/weakRed1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="启用" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#fff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/tablelayout_bg_item"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:paddingTop="@dimen/dp_1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="细胞学"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tablelayout_bg_item"
+                    android:padding="@dimen/dp_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="标识" />
+
+                        <EditText
+                            android:id="@+id/et_cytology"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/dp_15"
+                            android:layout_weight="5"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:hint="@string/RequiredCytology_Mark"
+                            android:maxLength="5"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:background="@drawable/edittext_select" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="位数" />
+
+                            <EditText
+                                android:id="@+id/et_cytology_size"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:textSize="@dimen/dp_15"
+                                android:layout_weight="5"
+                                android:hint="@string/RequiredCytology_size"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:background="@drawable/edittext_select" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="状态" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="禁用" />
+
+                                <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/switch_cytology"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@id/tx_lamp0"
+                                    app:sb_checked_color="@color/weakRed1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="启用" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#fff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/tablelayout_bg_item"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:paddingTop="@dimen/dp_1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="基因检测"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tablelayout_bg_item"
+                    android:padding="@dimen/dp_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="标识" />
+
+                        <EditText
+                            android:id="@+id/et_gene"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/dp_15"
+                            android:layout_weight="5"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:hint="@string/RequiredGene_Mark"
+                            android:maxLength="5"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:background="@drawable/edittext_select" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="位数" />
+
+                            <EditText
+                                android:id="@+id/et_gene_size"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:textSize="@dimen/dp_15"
+                                android:layout_weight="5"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:hint="@string/RequiredGene_size"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:background="@drawable/edittext_select" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="状态" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="禁用" />
+
+                                <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/switch_gene"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@id/tx_lamp0"
+                                    app:sb_checked_color="@color/weakRed1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="启用" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#fff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/tablelayout_bg_item"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:paddingTop="@dimen/dp_1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="DNA倍体"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tablelayout_bg_item"
+                    android:padding="@dimen/dp_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="标识" />
+
+                        <EditText
+                            android:id="@+id/et_dna"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/dp_15"
+                            android:layout_weight="5"
+                            android:background="@drawable/edittext_select"
+                            android:hint="@string/Requireddna_Mark"
+                            android:maxLength="5"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:paddingLeft="@dimen/dp_5" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="位数" />
+
+                            <EditText
+                                android:id="@+id/et_dna_size"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:textSize="@dimen/dp_15"
+                                android:layout_weight="5"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:hint="@string/Requireddna_size"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:background="@drawable/edittext_select" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="状态" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="禁用" />
+
+                                <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/switch_dna"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@id/tx_lamp0"
+                                    app:sb_checked_color="@color/weakRed1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="启用" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:background="#fff" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="@drawable/tablelayout_bg_item"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dp_1"
+                android:paddingRight="@dimen/dp_1"
+                android:paddingTop="@dimen/dp_1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="其他"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="6"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tablelayout_bg_item"
+                    android:padding="@dimen/dp_1"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="标识" />
+
+                        <EditText
+                            android:id="@+id/et_other"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_marginRight="@dimen/dp_5"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/dp_15"
+                            android:layout_weight="5"
+                            android:paddingLeft="@dimen/dp_5"
+                            android:hint="@string/Requiredother_size"
+                            android:maxLength="5"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:background="@drawable/edittext_select" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="位数" />
+
+                            <EditText
+                                android:id="@+id/et_other_size"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_marginRight="@dimen/dp_5"
+                                android:gravity="center_vertical"
+                                android:textSize="@dimen/dp_15"
+                                android:layout_weight="5"
+                                android:paddingLeft="@dimen/dp_5"
+                                android:hint="@string/RequiredHPV_size"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:background="@drawable/edittext_select" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="5dp"
+                        android:background="#fff" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="状态" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="禁用" />
+
+                                <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/switch_other"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_toRightOf="@id/tx_lamp0"
+                                    app:sb_checked_color="@color/weakRed1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="启用" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="50dp">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_wifiSetting_clear01"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:background="@drawable/btn_bg"-->
+            <!--android:text="@string/clear_wifi"-->
+            <!--android:textAllCaps="false" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_wifiSetting_save01"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="40dp"-->
+            <!--android:background="@drawable/btn_bg"-->
+            <!--android:text="@string/setting_barcode_finish"-->
+            <!--android:textAllCaps="false" />-->
+    <!--</RelativeLayout>-->
+</LinearLayout>

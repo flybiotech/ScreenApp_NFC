@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<dimen name="padding_small">16.7951dp</dimen>
+	<dimen name="padding_medium">16.7951dp</dimen>
+	<dimen name="padding_large">33.5904dp</dimen>
+	<dimen name="activity_horizontal_margin">33.5904dp</dimen>
+	<dimen name="activity_vertical_margin">33.5904dp</dimen>
+	<dimen name="height">20.9940dp</dimen>
+	<dimen name="fab_margin">33.5904dp</dimen>
+	<dimen name="title_bar_height">104.9698dp</dimen>
+	<dimen name="textSizetitle">31.2611sp</dimen>
+	<dimen name="buttonsSize">36.7778dp</dimen>
+	<dimen name="buttonsSizeEN">31.4910dp</dimen>
+	<dimen name="buttonHeight">83.9760dp</dimen>
+	<dimen name="buttonWidth">178.4489dp</dimen>
+	<dimen name="textViewNameSize">31.2611sp</dimen>
+	<dimen name="devImageWidth">146.9579dp</dimen>
+	<dimen name="nameSizeLive">31.4910sp</dimen>
+	<dimen name="marginLeftLength">10.4969dp</dimen>
+	<dimen name="marginRightLength">10.4969dp</dimen>
+	<dimen name="textviewSize">31.2611sp</dimen>
+	<dimen name="scrolWidth">41.9879dp</dimen>
+	<dimen name="LinerHeight">104.9698dp</dimen>
+	<dimen name="marginTop">20.9940sp</dimen>
+	<dimen name="adminTop">20.9940dp</dimen>
+</resources>

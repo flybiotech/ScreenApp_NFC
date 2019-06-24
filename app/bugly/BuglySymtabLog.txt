@@ -1,0 +1,4 @@
+symbolFile=F:\FLYDemo\screenApp\develope_master\ScreenApp\app\bugly\buglySymbol_libthSDK_armeabi-v7a-596cf.zip
+file=F:\FLYDemo\screenApp\develope_master\ScreenApp\app\src\main\obj\local\armeabi\libthSDK.so
+uuid=596cf38278dd5279e1d847a40ddaa041
+

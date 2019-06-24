@@ -1,0 +1,260 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Rl_container"
+    android:paddingLeft="10dp"
+    android:background="@color/bg_xcarc"
+    >
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="30dp"
+        android:layout_height="2dp" />
+
+    <!-- 录像时间记录-->
+    <com.view.MyTitleView
+        android:id="@+id/tx_record"
+        android:layout_width="40dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/view"
+        android:background="@color/bg_xcarc"
+        app:titleSize1="@dimen/nameSizeLive"
+        app:title1=""
+        android:visibility="gone"
+
+        />
+    <!-- 上传-->
+    <!--<com.view.MyTitleView-->
+        <!--android:id="@+id/bt_uploading"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_below="@id/view"-->
+        <!--app:titleSize1="@dimen/nameSizeLive"-->
+        <!--app:title1="@string/image_uploading"-->
+        <!--android:background="@drawable/text_mytitleview"-->
+        <!--android:visibility="visible"-->
+
+        <!--/>-->
+<!--<com.view.MyTitleView-->
+    <!--android:id="@+id/bt_progress"-->
+    <!--android:layout_width="40dp"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_below="@id/view"-->
+    <!--app:titleSize1="@dimen/nameSizeLive"-->
+    <!--app:title1="准备上传"-->
+    <!--android:background="@drawable/text_mytitleview"-->
+    <!--android:visibility="gone"/>-->
+    <!-- 停拍-->
+    <com.view.MyTitleView
+        android:id="@+id/bt_claer"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/view"
+        app:titleSize1="@dimen/nameSizeLive"
+        app:title1="@string/image_timing_clear"
+        android:background="@drawable/text_mytitleview"
+        />
+
+    <!--  记录拍照时间 -->
+    <com.view.MyTitleView
+        android:id="@+id/snap_time"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/bt_claer"
+        app:titleSize1="@dimen/nameSizeLive"
+        app:title1="00:00"
+        />
+
+    <com.view.MyTitleView
+        android:id="@+id/bt_start"
+        android:layout_width="40dp"
+        android:layout_height="85dp"
+        android:layout_below="@id/snap_time"
+        android:layout_marginTop="10dp"
+        app:titleSize1="@dimen/nameSizeLive"
+        app:title1="@string/image_timing_begin"
+        android:background="@drawable/text_mytitleview"
+        />
+
+
+
+
+
+
+    <com.activity.GlBufferView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/bt_start"
+        android:layout_marginLeft="5dp"
+        ></com.activity.GlBufferView>
+
+
+
+    <com.view.XCArcMenuView
+        android:id="@+id/arcmenu"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/bt_start"
+        android:layout_marginTop="10dp"
+        android:background="@color/bg_xcarc"
+        >
+
+
+        <com.view.MyTitleView
+            android:id="@+id/id_button"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            app:titleSize1="@dimen/nameSizeLive"
+            app:title1="@string/image_artword"
+            android:background="@drawable/text_mytitleview"
+            />
+
+
+
+        <TextView
+            android:id="@+id/id_button1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/image_artword"
+            android:tag="@string/image_artword"
+            android:textColor="@color/backgroundColor"
+            android:gravity="center"
+            android:rotation="-90"
+            />
+
+        <TextView
+            android:id="@+id/id_button2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/image_acetic_acid_white"
+            android:tag="@string/image_acetic_acid_white"
+            android:gravity="center"
+            android:rotation="-90"
+            android:textColor="@color/backgroundColor"
+            />
+        <TextView
+            android:id="@+id/id_button3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="@string/image_Lipiodol"
+            android:tag="@string/image_Lipiodol"
+            android:gravity="center"
+            android:rotation="-90"
+            android:textColor="@color/backgroundColor"
+            />
+
+
+    </com.view.XCArcMenuView>
+
+    <!--   患者   -->
+    <com.view.MyTitleView
+        android:id="@+id/tv_huanzhe"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/arcmenu"
+        app:title1=""
+        app:titleSize1="@dimen/nameSizeLive"
+
+
+        />
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/Relativelayout01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toRightOf="@id/tv_huanzhe"
+        >
+
+        <LinearLayout
+            android:id="@+id/ctl_right"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_capture"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/imagebutton_background"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsetup1"
+                android:rotation="-90"
+                ></ImageButton>
+
+            <ImageButton
+                android:id="@+id/btn_record"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/imagebutton_background"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsetup2"
+                android:rotation="-90"
+                ></ImageButton>
+
+            <ImageButton
+                android:id="@+id/btn_photo_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/imagebutton_background"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsetup3"
+                android:rotation="-90"
+                ></ImageButton>
+
+            <ImageButton
+                android:id="@+id/btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:background="@drawable/imagebutton_background"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsetup"></ImageButton>
+
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:background="@drawable/imagebutton_background"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btnsetup4"
+                android:rotation="-90"
+                ></ImageButton>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

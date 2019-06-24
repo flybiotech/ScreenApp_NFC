@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value="ScreenDB"></dbname>
+    <version value="38" ></version>
+
+    <list>
+        <mapping class="com.screening.model.ListMessage"></mapping>
+        <mapping class="com.screening.model.User"></mapping>
+        <mapping class="com.screening.model.FTPPath"></mapping>
+        <mapping class="com.screening.model.FTPBean"></mapping>
+        <mapping class="com.screening.model.DoctorId"></mapping>
+        <mapping class="com.screening.model.ScreenErrorList"></mapping>
+    </list>
+</litepal>

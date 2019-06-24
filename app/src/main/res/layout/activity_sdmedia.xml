@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layTop"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/weakRed1">
+
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:onClick="back"
+            android:text="@string/patient_return"
+            android:textAllCaps="false"
+            android:textColor="@color/black"></Button>
+
+
+        <Button
+            android:id="@+id/btn_checkall"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:text="@string/image_manage_all"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"></Button>
+
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="40sp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/btn_checkall"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:text="@string/image_manage_delete_all"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"></Button>
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layTop"
+        android:background="#F2F2F2">
+
+        <com.view.SyncHorizontalScrollView
+            android:id="@+id/mHsv"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:fadingEdge="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/rl_nav"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:background="@color/weakRed1">
+
+                <RadioGroup
+                    android:id="@+id/rg_nav_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/weakRed1"
+                    android:orientation="horizontal"></RadioGroup>
+
+                <ImageView
+                    android:id="@+id/iv_nav_indicator"
+                    android:layout_width="1dip"
+                    android:layout_height="5dip"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/appcolor"
+                    android:scaleType="matrix" />
+            </RelativeLayout>
+        </com.view.SyncHorizontalScrollView>
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/rl_tab"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+</RelativeLayout>

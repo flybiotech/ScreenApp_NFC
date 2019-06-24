@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/layTop"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/weakRed1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/image_setting_AP"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textViewNameSize" />
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:onClick="back"
+            android:text="@string/patient_return"
+            android:textAllCaps="false"></Button>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layTop">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layout_wifi_ssid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/image_setting_AP_message2"
+            android:textAllCaps="false"
+            android:textColorHint="@color/weakRed1">
+
+            <android.support.design.widget.TextInputEditText
+
+                android:id="@+id/ed_wifi_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                android:textColor="#969696"
+                android:textSize="@dimen/textViewNameSize" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layout_wifi_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_wifi_ssid"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:hint="@string/image_setting_AP_password_updata"
+            android:textAllCaps="false">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/ed_wifi_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textAllCaps="false"
+                android:textColor="#969696"
+                android:textSize="@dimen/textViewNameSize" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_ap"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/layout_wifi_pwd"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/weakRed1"
+            android:text="@string/button_ok"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

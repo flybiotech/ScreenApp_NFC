@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+
+
+    <RelativeLayout
+        android:id="@+id/layTop"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/weakRed1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/image_setting"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textViewNameSize" />
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:onClick="back"
+            android:text="@string/patient_return"
+            android:textAllCaps="false"></Button>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/lay_set_apsta"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/layTop"
+        android:layout_marginTop="20dp"
+        >
+        <Button
+            android:id="@+id/btn_ap"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/weakRed1"
+            android:text="@string/image_setting_AP"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_sta"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/weakRed1"
+            android:text="@string/image_setting_STA"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+
+
+    <!-- 拍照设置 -->
+    <RelativeLayout
+        android:id="@+id/lay_snap_set"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/lay_set_apsta"
+        >
+
+        <Button
+            android:id="@+id/btn_set_snapshot"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/weakRed1"
+            android:text="@string/image_setting_snapshot"
+            android:textAllCaps="false"
+            />
+
+
+        <!--  设置时长-->
+        <Spinner
+            android:id="@+id/sp_snap1"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false" />
+
+        <!--  设置间隔时间-->
+        <Spinner
+            android:id="@+id/sp_snap2"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/sp_snap1"
+            android:textAllCaps="false" />
+
+
+
+    </RelativeLayout>
+
+
+
+    <!-- 碘油拍照设置 -->
+    <RelativeLayout
+        android:id="@+id/lay_snap_set_dy"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/lay_snap_set"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/btn_set_snapshot_dy"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/weakRed1"
+            android:text="@string/image_setting_snapshot_dy"
+            android:textAllCaps="false"
+            />
+
+
+        <!--  设置时长-->
+        <Spinner
+            android:id="@+id/sp_snap1_dy"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false" />
+
+        <!--  设置间隔时间-->
+        <Spinner
+            android:id="@+id/sp_snap2_dy"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/sp_snap1_dy"
+            android:textAllCaps="false" />
+
+
+
+    </RelativeLayout>
+
+
+    <!-- 录像设置 -->
+    <RelativeLayout
+        android:id="@+id/lay_record_set"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/lay_snap_set_dy"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/btn_set_record"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/weakRed1"
+            android:text="@string/image_setting_pickup"
+            android:textAllCaps="false" />
+
+        <Spinner
+            android:id="@+id/sp_record"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+
+
+    <!--   红绿光设置 -->
+    <RelativeLayout
+        android:id="@+id/lay_lamp_set"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/lay_record_set"
+        android:layout_marginTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/tx_lamp0"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="@string/image_setting_light_white"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+
+        <com.suke.widget.SwitchButton
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/switch_lamp0"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/tx_lamp0"
+            app:sb_checked_color="@color/weakRed1" />
+
+
+        <TextView
+            android:id="@+id/tx_lamp1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:gravity="center"
+            android:text="@string/image_setting_light_green"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/switch_lamp0"
+            />
+
+        <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/switch_lamp1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/tx_lamp1"
+            app:sb_checked_color="@color/weakRed1" />
+
+
+        <TextView
+            android:id="@+id/tx_lamp2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/image_snapshot_record"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/switch_lamp1"
+            />
+
+        <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/switch_lamp2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/tx_lamp2"
+            app:sb_checked_color="@color/weakRed1" />
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

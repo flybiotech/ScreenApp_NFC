@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.screening.activity.RecoverActivity"
+    android:orientation="vertical">
+    <include layout="@layout/title_bar" android:id="@+id/ll_bar"/>
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_return"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_below="@+id/ll_bar">-->
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/weakRed"-->
+            <!--android:layout_marginTop="3dp"></View>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_return"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@drawable/fanhui"-->
+            <!--android:layout_gravity="center_vertical"/>-->
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/weakRed"-->
+            <!--android:layout_marginTop="3dp"></View>-->
+    <!--</LinearLayout>-->
+    <ListView
+        android:id="@+id/lv_show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_bar"
+        ></ListView>
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--设置描边颜色-->
+    <stroke
+        android:width="1.5dp"
+        android:color="@color/lightRed" />
+    <!--设置填充颜色-->
+    <solid android:color="#fff" />
+    <corners android:radius="100dp" />
+    <gradient
+        android:angle="45"
+        android:endColor="@color/lightRed"
+        android:startColor="@color/weakRed" />
+</shape>

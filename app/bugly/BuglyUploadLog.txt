@@ -1,0 +1,4 @@
+file=F:\FLYDemo\screenApp\develope_master\ScreenApp\app\bugly\buglySymbol_libthSDK_armeabi-v7a-596cf.zip
+sha1=4b23ea53fd2ce8569c1559271ebc278de996bfc2
+appId=020812f7c4
+
