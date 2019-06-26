@@ -65,7 +65,7 @@ public class CaseListManagerActivity extends BaseActivity implements View.OnClic
     private void initView() {
 
         tv_title = findViewById(R.id.title_text);
-        tv_title.setText(getString(R.string.detialMessage));
+        tv_title.setText(getString(R.string.listMessage));
         bt_left = findViewById(R.id.btn_left);
         bt_right = findViewById(R.id.btn_right);
         bt_right.setVisibility(View.INVISIBLE);
@@ -74,7 +74,6 @@ public class CaseListManagerActivity extends BaseActivity implements View.OnClic
         list_caselist_01 = findViewById(R.id.list_caselist_01);
         tv_empty = findViewById(R.id.tv_empty);
         messageSelectUtils = new MessageSelectUtils();
-
 
     }
 

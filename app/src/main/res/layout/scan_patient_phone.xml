@@ -16,52 +16,52 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_5"
                 android:background="#fff" />
 
         </TableRow>
@@ -71,19 +71,19 @@
 
             <TextView
                 android:id="@+id/tv_1"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/dp_100"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
                 android:padding="2dp"
                 android:text="@string/pId"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:enabled="false"
@@ -91,35 +91,35 @@
                 android:padding="2dp"
                 android:text="1"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <TextView
                 android:id="@+id/tv_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:padding="2dp"
+                android:padding="@dimen/dp_2"
                 android:text="@string/pName"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <EditText
                 android:id="@+id/et_pName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/required"
                 android:padding="2dp"
                 android:textAllCaps="false"
                 android:textColorHint="@color/lightRed"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -129,54 +129,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:padding="2dp"
+                android:padding="@dimen/dp_2"
                 android:text="@string/pAge"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:inputType="number"
                 android:maxLength="2"
-                android:padding="2dp"
+                android:padding="@dimen/dp_2"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <TextView
                 android:id="@+id/tv_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:padding="2dp"
+                android:padding="@dimen/dp_2"
                 android:text="@string/pSex"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pSex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:enabled="false"
                 android:hint="@string/input"
-                android:padding="2dp"
+                android:padding="@dimen/dp_2"
                 android:text="女"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -189,20 +189,20 @@
                 android:padding="2dp"
                 android:text="@string/RequiredPhone"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:inputType="number"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize"
+                android:textSize="@dimen/dp_12"
                 android:maxLength="11"
                 />
 
@@ -214,13 +214,13 @@
                 android:padding="2dp"
                 android:text="@string/localPhone"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pLocalPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
@@ -228,13 +228,13 @@
                 android:padding="2dp"
                 android:textAllCaps="false"
                 android:maxLength="8"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -247,19 +247,19 @@
                 android:padding="2dp"
                 android:text="@string/birthData"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <TextView
                 android:id="@+id/tv_8"
@@ -269,7 +269,7 @@
                 android:padding="2dp"
                 android:text="@string/Occupation"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize"
+                android:textSize="@dimen/dp_12"
 
                 />
 
@@ -277,19 +277,19 @@
                 android:id="@+id/et_pOccupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:maxLength="15"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -302,20 +302,20 @@
                 android:padding="2dp"
                 android:text="@string/smoking"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_smoking"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:maxLength="2"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <TextView
                 android:id="@+id/tv_10"
@@ -325,20 +325,20 @@
                 android:padding="2dp"
                 android:text="@string/sexualpartners"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <EditText
                 android:id="@+id/et_pSexualpartners"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:inputType="number"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
         <View
@@ -356,20 +356,20 @@
                 android:padding="2dp"
                 android:text="@string/Gestationaltimes"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pGestationaltimes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:inputType="number"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <TextView
                 android:id="@+id/tv_12"
@@ -379,25 +379,25 @@
                 android:padding="2dp"
                 android:text="@string/abortion"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/pAbortion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="3"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:inputType="number"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
         </TableRow>
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -410,12 +410,12 @@
                 android:padding="2dp"
                 android:text="@string/RequiredID"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="8">
 
                 <EditText
@@ -431,13 +431,13 @@
                     android:padding="2dp"
                     android:textAllCaps="false"
                     android:textColorHint="@color/lightRed"
-                    android:textSize="@dimen/textViewNameSize"
+                    android:textSize="@dimen/dp_12"
                     android:maxLength="18"
                     />
 
                 <ImageView
                     android:id="@+id/iv_scanidcard"
-                    android:layout_width="40dp"
+                    android:layout_width="@dimen/dp_40"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
@@ -460,7 +460,7 @@
                 android:padding="2dp"
                 android:text="@string/RequiredHPV"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -477,11 +477,11 @@
                     android:hint="@string/input"
                     android:padding="2dp"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textViewNameSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <ImageView
                     android:id="@+id/iv_scanhpv"
-                    android:layout_width="40dp"
+                    android:layout_width="@dimen/dp_40"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
@@ -505,7 +505,7 @@
                 android:padding="2dp"
                 android:text="@string/RequiredCytology"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -523,11 +523,11 @@
                     android:padding="2dp"
                     android:textAllCaps="false"
 
-                    android:textSize="@dimen/textViewNameSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <ImageView
                     android:id="@+id/iv_scanxbx"
-                    android:layout_width="40dp"
+                    android:layout_width="@dimen/dp_40"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
@@ -550,7 +550,7 @@
                 android:padding="2dp"
                 android:text="@string/RequiredGene"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -567,12 +567,12 @@
                     android:hint="@string/input"
                     android:padding="2dp"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textViewNameSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <ImageView
                     android:id="@+id/iv_scanjyjc"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
                     android:src="@drawable/scanning" />
@@ -594,7 +594,7 @@
                 android:padding="2dp"
                 android:text="@string/dna"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -611,12 +611,12 @@
                     android:hint="@string/input"
                     android:padding="2dp"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textViewNameSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <ImageView
                     android:id="@+id/iv_scandna"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
                     android:src="@drawable/scanning" />
@@ -638,7 +638,7 @@
                 android:padding="2dp"
                 android:text="@string/other"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -655,12 +655,12 @@
                     android:hint="@string/input"
                     android:padding="2dp"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textViewNameSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <ImageView
                     android:id="@+id/iv_scanother"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
                     android:layout_alignParentRight="true"
                     android:padding="2dp"
                     android:src="@drawable/scanning" />
@@ -682,19 +682,19 @@
                 android:padding="2dp"
                 android:text="@string/Detailedaddress"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <EditText
                 android:id="@+id/et_pDetailedaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="8"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
         </TableRow>
 
         <View
@@ -713,76 +713,76 @@
                 android:padding="2dp"
                 android:text="@string/Remarks"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12"/>
 
             <EditText
                 android:id="@+id/et_pRemarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
+                android:layout_marginRight="@dimen/dp_5"
                 android:layout_span="8"
                 android:background="@drawable/edittext_select"
                 android:hint="@string/input"
                 android:padding="2dp"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
         </TableRow>
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow
-            android:layout_height="30dp"
-            android:layout_marginTop="25dp">
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10">
 
             <TextView
                 android:id="@+id/tv_21"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/dp_30"
                 android:layout_span="2"
 
                 android:gravity="center_vertical"
                 android:padding="2dp"
                 android:text="@string/marry"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <Spinner
                 android:id="@+id/sp_marray"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/dp_30"
                 android:layout_span="3"
                 android:clickable="false"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize"></Spinner>
+                android:textSize="@dimen/dp_12"></Spinner>
 
             <TextView
                 android:id="@+id/tv_22"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/dp_30"
                 android:layout_span="2"
                 android:gravity="center"
                 android:padding="2dp"
                 android:text="@string/contraception"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_12" />
 
             <Spinner
                 android:id="@+id/sp_contraception"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="@dimen/dp_30"
                 android:layout_span="3"
                 android:clickable="false"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize"></Spinner>
+                android:textSize="@dimen/dp_12"></Spinner>
         </TableRow>
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="5dp"
+            android:layout_height="@dimen/dp_5"
             android:background="#fff" />
 
         <TableRow>
@@ -790,15 +790,10 @@
 
         </TableRow>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="5dp"
-            android:background="#fff" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/dp_10"
             android:orientation="horizontal">
 
             <!--<View-->
@@ -810,15 +805,15 @@
             <Button
                 android:id="@+id/bt_clearM"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg"
                 android:gravity="center"
                 android:text="@string/clear"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_15" />
 
             <!--<View-->
             <!--android:layout_width="wrap_content"-->
@@ -829,30 +824,30 @@
             <Button
                 android:id="@+id/bt_save"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
                 android:layout_span="2"
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg"
                 android:gravity="center"
                 android:text="@string/patient_save"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_15"/>
 
             <Button
                 android:id="@+id/bt_getImage"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
                 android:layout_span="2"
                 android:layout_weight="1"
                 android:background="@drawable/btn_bg"
                 android:gravity="center"
                 android:text="@string/getimage"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textViewNameSize" />
+                android:textSize="@dimen/dp_15" />
 
         </LinearLayout>
 

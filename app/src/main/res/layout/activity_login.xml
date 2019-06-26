@@ -32,7 +32,7 @@
                     android:layout_weight="1"
                     android:text="@string/user_name"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textSizetitle" />
+                    android:textSize="@dimen/dp_15" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -51,6 +51,7 @@
                             android:layout_height="wrap_content"
                             android:background="@null"
                             android:hint="@string/user_name_hint"
+                            android:textSize="@dimen/dp_13"
                             />
 
                     </RelativeLayout>
@@ -78,7 +79,7 @@
                     android:layout_weight="1"
                     android:text="@string/user_password"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/textSizetitle" />
+                    android:textSize="@dimen/dp_15" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -94,13 +95,13 @@
                         android:background="@null"
                         android:hint="@string/user_password_hint"
                         android:inputType="textPassword"
-
+                        android:textSize="@dimen/dp_13"
                         />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginRight="@dimen/dp_8"
 
                         android:background="@color/black"></View>
                 </LinearLayout>
@@ -117,7 +118,7 @@
 
                 <View
                     android:layout_width="0dp"
-                    android:layout_height="5dp"
+                    android:layout_height="@dimen/dp_5"
                     android:layout_weight="1" />
 
                 <LinearLayout
@@ -134,15 +135,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="@dimen/dp_5"
                         android:text="@string/user_password_memory"
                         android:textAllCaps="false"
-                        android:textSize="@dimen/nameSizeLive" />
+                        android:textSize="@dimen/dp_15" />
                 </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/llayout"
@@ -153,14 +153,10 @@
             <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dp_40"
                 android:background="@drawable/text_service_color1"
                 android:text="@string/login"
                 android:textAllCaps="false"
-                android:textSize="@dimen/textSizetitle" />
+                android:textSize="@dimen/dp_15" />
         </LinearLayout>
-
-
-
-
 </RelativeLayout>

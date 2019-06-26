@@ -15,7 +15,7 @@ import android.support.v7.widget.ViewUtils;
 import android.util.Log;
 
 import com.activity.R;
-import com.huashi.bluetooth.HSBlueApi;
+//import com.huashi.bluetooth.HSBlueApi;
 import com.logger.LogHelper;
 import com.logger.TxtFormatStrategy;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -51,7 +51,7 @@ public class MyApplication extends LitePalApplication{
     private static boolean isShow = false;
     protected static Context context;
     private String TAG = "TAG_MYAPP";
-    private HSBlueApi api;
+//    private HSBlueApi api;
     String filepath = "";
 
 
@@ -83,12 +83,12 @@ public class MyApplication extends LitePalApplication{
 
     //注册蓝牙相关api
     private void initBlueApi(){
-        if(Constss.hsBlueApi==null){
-            filepath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/wltlib";// 授权目录
-            api = new HSBlueApi(this, filepath);
-            api.init();
-            Constss.hsBlueApi=api;
-        }
+//        if(Constss.hsBlueApi==null){
+//            filepath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/wltlib";// 授权目录
+//            api = new HSBlueApi(this, filepath);
+//            api.init();
+//            Constss.hsBlueApi=api;
+//        }
 
     }
 

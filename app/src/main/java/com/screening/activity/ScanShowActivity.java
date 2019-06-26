@@ -1,5 +1,6 @@
 package com.screening.activity;
 
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothDevice;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -21,12 +22,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.Manager.DataManager;
 import com.activity.LiveVidActivity;
 import com.activity.R;
-import com.huashi.bluetooth.HsInterface;
-import com.huashi.bluetooth.IDCardInfo;
+import com.cw.cwsdk.cw;
+import com.cw.cwsdk.u8API.barcode.BarCodeAPI;
+import com.cw.cwsdk.u8API.idcard.AsyncParseSFZ;
+import com.cw.cwsdk.u8API.idcard.ParseSFZAPI;
 import com.kalu.ocr.CaptureActivity;
 import com.logger.LogHelper;
 import com.model.DevModel;
@@ -73,7 +77,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDialogButtonClickListener, View.OnClickListener,
-        WifiConnectUtil.WifiConnectResultListener, VerificationUtils.VerificationResult {
+        WifiConnectUtil.WifiConnectResultListener, VerificationUtils.VerificationResult, BarCodeAPI.IBarCodeData {
     private TextView tv01, tv02, tv03, tv04, tv05, tv06, tv07, tv08, tv09, tv10,
             tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20, tv21, tv22, title_text;
     private String[] tvName;//标识字段的名称集合
@@ -91,7 +95,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     private WifiLoadingAnim wifiLoadingAnim;
     private String marry = "无", birthControlMode = "无";
     private String screenId = "default";
-    private Timer timer;
     private ModifyORAdd modifyORAdd;
     private Handler mHandler = new ShowHandler(this);
     private int id = -1;
@@ -102,6 +105,19 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     private DataManager dataManager = DataManager.getInstance();
     private LoadingDialog mDialog;
     private boolean isFront = false;//判断当前页面是否在前台
+    private int style = 0;//1代表hpv,2代表细胞学，3代表基因，4代表dna,5代表其他
+    private Handler mhandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+
+                    break;
+            }
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +131,9 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         initSelectItemClick();
         initEditTextClick();
         WifiConnectUtil.Companion.getInstance().setWifiConnectListener(this, null);
+        cw.BarCodeAPI(this).setOnBarCodeDataListener(this);
+        cw.FingerPrintAPI().Scanner(this);
+        getData();
     }
 
     private void initEditTextClick() {
@@ -355,6 +374,101 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         }
     }
 
+    @Override
+    public void sendScan() {
+
+    }
+
+    @Override
+    public void onBarCodeData(String s) {
+        mhandler.post(new Runnable() {
+            @SuppressLint("StringFormatMatches")
+            @Override
+            public void run() {
+                //按键扫描
+                Log.e("code", s);
+//                tvShow.setText(s);
+                switch (style){
+                    case 0:
+                        Toasty.normal(ScanShowActivity.this,"请重新点击扫描按钮");
+                        break;
+                    case 1:
+                        et_pRequiredHPV.setText(s);
+                        break;
+                    case 2:
+                        et_pRequiredCytology.setText(s);
+                        break;
+                    case 3:
+                        et_pRequiredGene.setText(s);
+                        break;
+                    case 4:
+                        et_pRequiredDNA.setText(s);
+                        break;
+                    case 5:
+                        et_pRequiredOther.setText(s);
+                        break;
+                }
+
+            }
+        });
+    }
+
+    @Override
+    public void getSettings(int i, int i1, int i2, String s, String s1, int i3, int i4) {
+
+    }
+
+    @Override
+    public void setSettingsSuccess() {
+
+    }
+
+    /**
+     * 身份证识别模块代码
+     */
+    private void getData() {
+
+        cw.AsyncParseSFZ(this).setOnReadSFZListener(new AsyncParseSFZ.OnReadSFZListener() {
+
+            @Override
+            public void onReadSuccess(ParseSFZAPI.People people) {
+                updateInfo(people);
+            }
+
+            @Override
+            public void onReadFail(int confirmationCode) {
+                if (confirmationCode == ParseSFZAPI.Result.FIND_FAIL) {
+                    Toast.makeText(getApplicationContext(), "未寻到卡,有返回数据", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.TIME_OUT) {
+                    Toast.makeText(getApplicationContext(), "未寻到卡,无返回数据，超时！！(串口无数据)", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.OTHER_EXCEPTION) {
+                    Toast.makeText(getApplicationContext(), "可能是串口打开失败或其他异常", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.NO_THREECARD) {
+                    Toast.makeText(getApplicationContext(), "此二代证没有指纹数据", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.FIND_FAIL_8084) {
+                    Toast.makeText(getApplicationContext(), "未寻到卡,有返回数据(80)", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.FIND_FAIL_4145) {
+                    Toast.makeText(getApplicationContext(), "未寻到卡,有返回数据(41)", Toast.LENGTH_SHORT).show();
+                } else if (confirmationCode == ParseSFZAPI.Result.FIND_FAIL_other) {
+                } else if (confirmationCode == ParseSFZAPI.Result.FIND_FAIL_Length) {
+                    Toast.makeText(getApplicationContext(), "未寻到卡,有返回数据(数据接收不完整)", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void updateInfo(ParseSFZAPI.People people) {
+
+        et_pRequiredID.setText(people.getPeopleIDCode());
+        et_pDate.setText(people.getPeopleBirthday().substring(0, 4)+"."+people.getPeopleBirthday().substring(4, 6)+"."+people.getPeopleBirthday().substring(6, 8));
+        et_pName.setText(people.getPeopleName());
+//        sfz_nation.setText(people.getPeopleNation());
+//        sfz_sex.setText(people.getPeopleSex());
+//        sfz_year.setText(people.getPeopleBirthday().substring(0, 4));
+        Log.e("scanshow",people.getPeopleIDCode()+",," +people.getPeopleBirthday().substring(4, 6)+",,"+people.getPeopleName()+",,"+people.getPeopleNation()+",,"+people.getPeopleBirthday().substring(0, 4));
+    }
+
+
 
     private class ShowThread extends Thread {
         private WeakReference<ScanShowActivity> activity;
@@ -376,45 +490,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
                 mHandler.sendMessage(message);
             }
         }
-    }
-
-
-    //连接蓝牙
-    private void initConnectBlue() {
-        showDiolog(getString(R.string.linkingBlue));
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Constss.hsBlueApi.setmInterface(new HsInterface() {
-                    @Override
-                    public void reslut2Devices(Map<String, List<BluetoothDevice>> map) {
-
-                    }
-                });
-                Constss.hsBlueApi.scanf();
-                int ret = Constss.hsBlueApi.connect(bluetoothUtils.initGetBlue(Constss.Bluetooth_Path));
-                if (ret == 0) {
-                    Constss.isConnBlue = true;
-                    try {
-                        Thread.sleep(4000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                dismissDiolog();
-                                ToastUtils.showToast(ScanShowActivity.this, getString(R.string.BlueConnected));
-                            }
-                        });
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                } else {
-                    Constss.isConnBlue = true;
-                }
-            }
-        }).start();
-
     }
 
     private class ShowHandler extends Handler {
@@ -459,56 +534,14 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     @Override
     protected void onStart() {
         super.onStart();
-//        EXOCRDict.InitDict(this);
         if (id == 1) {
             new ShowThread(this).start();
-        }
-        Log.e("blueLink", Constss.isConnBlue + ",,," + Constss.hsBlueApi);
-        String blueName = bluetoothUtils.initGetBlue(Constss.Bluetooth_Path);
-        if (blueName == null || blueName == "") {
-//            ToastUtils.showToast(this, getString(R.string.setting_blue_title));
-        } else {
-            if (!Constss.isConnBlue) {
-//                Log.e("是否连接", Constss.isFtpTrue + "");
-                initConnectBlue();
-            }
         }
         BardcodeSettingUtils.getScreenBarcode(1, Constant.hpv_key, et_pRequiredHPV, iv_scanhpv, ScanShowActivity.this);
         BardcodeSettingUtils.getScreenBarcode(2, Constant.cytology_key, et_pRequiredCytology, iv_scanxbx, ScanShowActivity.this);
         BardcodeSettingUtils.getScreenBarcode(3, Constant.gene_key, et_pRequiredGene, iv_scanjyjc, ScanShowActivity.this);
         BardcodeSettingUtils.getScreenBarcode(4, Constant.dna_key, et_pRequiredDNA, iv_scandna, ScanShowActivity.this);
         BardcodeSettingUtils.getScreenBarcode(5, Constant.other_key, et_pRequiredOther, iv_scanother, ScanShowActivity.this);
-    }
-
-
-    private IDCardInfo ic;
-    int ret;
-
-    //开始读卡
-    private void initReadCard() {
-        if (!Constss.isConnBlue) {
-            return;
-        }
-
-        Constss.hsBlueApi.aut();
-        ret = Constss.hsBlueApi.Authenticate(500);
-        ic = new IDCardInfo();
-        ret = Constss.hsBlueApi.Read_Card(ic, 2000);
-
-        if (ret == 1) {
-            if (ic.getcertType() == " ") {
-                et_pName.setText(ic.getPeopleName());
-                et_pRequiredID.setText(ic.getIDCard());
-                int age = getAge(ic.getBirthDay());
-                Log.e("birth", ic.getBirthDay().toString() + "////" + age);
-                if (age != -1) {
-                    et_pAge.setText(age + "");
-                } else {
-                    SouthUtil.showToast(this, getString(R.string.systemTime));
-                }
-
-            }
-        }
     }
 
     /**
@@ -531,6 +564,9 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     protected void onPause() {
         super.onPause();
         id = -1;
+        cw.BarCodeAPI(ScanShowActivity.this).CloseScanning();
+        //建议在onPause里或者监听屏幕息屏里放，息屏后可以省电
+        cw.BarCodeAPI(ScanShowActivity.this).closeBarCodeReceiver();
     }
 
     private void initClick() {
@@ -543,7 +579,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         iv_scanxbx.setOnClickListener(this);
         btn_left.setOnClickListener(this);
         iv_scanother.setOnClickListener(this);
-//        iv_scanidcard.setOnClickListener(this);
+        iv_scanidcard.setOnClickListener(this);
     }
 
 
@@ -559,9 +595,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
                 Intent intent = new Intent(ScanShowActivity.this, MainActivity.class);
                 intent.putExtra("canshu", 0);
                 startActivity(intent);
-                if (timer != null) {
-                    timer.cancel();
-                }
                 break;
             case R.id.bt_getImage:
 
@@ -573,32 +606,40 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
 
                 break;
             case R.id.iv_scanhpv:
-                startActivityForResult(new Intent(this, ScanningActivity.class), 1);
+//                startActivityForResult(new Intent(this, ScanningActivity.class), 1);
+                style = 1;
+                cw.BarCodeAPI(ScanShowActivity.this).scan();
                 break;
             case R.id.iv_scandna:
-                startActivityForResult(new Intent(this, ScanningActivity.class), 4);
+                style = 4;
+                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                startActivityForResult(new Intent(this, ScanningActivity.class), 4);
                 break;
             case R.id.iv_scanxbx:
-                startActivityForResult(new Intent(this, ScanningActivity.class), 2);
+                style = 2;
+                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                startActivityForResult(new Intent(this, ScanningActivity.class), 2);
                 break;
             case R.id.iv_scanjyjc:
-                startActivityForResult(new Intent(this, ScanningActivity.class), 3);
+                style = 3;
+                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                startActivityForResult(new Intent(this, ScanningActivity.class), 3);
                 break;
             case R.id.bt_save:
-                if (Constss.isConnBlue) {
-                    initReadCard();
-                } else {
-                    ToastUtils.showToast(this, "正在连接蓝牙");
-                }
+//                if (Constss.isConnBlue) {
+////                    initReadCard();
+//                } else {
+//                    ToastUtils.showToast(this, "正在连接蓝牙");
+//                }
 
                 break;
             case R.id.iv_scanother:
-                startActivityForResult(new Intent(this, ScanningActivity.class), 5);
+                style = 5;
+                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                startActivityForResult(new Intent(this, ScanningActivity.class), 5);
                 break;
             case R.id.iv_scanidcard:
-                Intent scanIntent = new Intent(getApplicationContext(), CaptureActivity.class);
-                scanIntent.putExtra(CaptureActivity.INTNET_FRONT, true);
-                startActivityForResult(scanIntent, REQUEST_CODE_FRONT);
+                cw.AsyncParseSFZ(getApplicationContext()).readSFZ();
                 break;
             default:
                 break;
@@ -708,7 +749,9 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     protected void onResume() {
         super.onResume();
         isFront = true;
-
+        //建议在onResume里放，息屏后可以省电
+        cw.BarCodeAPI(ScanShowActivity.this).openBarCodeReceiver();
+        cw.AsyncParseSFZ(this).openSerialPort(this);
     }
 
 
@@ -730,6 +773,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         bt_clear = findViewById(R.id.bt_clearM);
         bt_save = findViewById(R.id.bt_save);
         bt_save.setText("读卡");
+        bt_save.setVisibility(View.GONE);
         bt_getImage = findViewById(R.id.bt_getImage);
         et_pId = findViewById(R.id.et_pId);
         et_pName = findViewById(R.id.et_pName);
@@ -755,7 +799,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         btn_left = findViewById(R.id.btn_left);
         btn_left.setVisibility(View.VISIBLE);
         iv_scanidcard = findViewById(R.id.iv_scanidcard);
-        iv_scanidcard.setVisibility(View.GONE);
+//        iv_scanidcard.setVisibility(View.GONE);
         btn_left.setText(getString(R.string.patient_return));
         mConst.setMarry(getString(R.string.patient_nothing));
         mConst.setBirthControlMode(getString(R.string.patient_nothing));

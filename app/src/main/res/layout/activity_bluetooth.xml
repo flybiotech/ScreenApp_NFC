@@ -22,7 +22,7 @@
             android:layout_weight="3"
             android:text="@string/stting_bluetooth_name"
             android:textAllCaps="false"
-            android:textSize="@dimen/textViewNameSize"
+            android:textSize="@dimen/dp_15"
             android:gravity="center"/>
 
         <EditText
@@ -49,15 +49,15 @@
             android:id="@+id/blue_link_break"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_30"
             android:background="@drawable/btn_bg_select"
             android:text="@string/setting_bluetooth_link_break"
             android:textAllCaps="false"
-            android:textSize="13sp"
+            android:textSize="@dimen/dp_13"
             />
         <View
             android:layout_width="0dp"
-            android:layout_height="10dp"
+            android:layout_height="@dimen/dp_10"
             android:layout_weight="1" />
 
         <Button
@@ -72,7 +72,7 @@
             />
         <View
             android:layout_width="0dp"
-            android:layout_height="10dp"
+            android:layout_height="@dimen/dp_10"
             android:layout_weight="1" />
 
     </LinearLayout>

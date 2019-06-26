@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/LinerHeight"
+    android:layout_height="@dimen/dp_40"
     android:background="@drawable/title_shape"
     android:focusable="true"
     android:focusableInTouchMode="true">
@@ -15,14 +15,14 @@
         android:layout_centerInParent="true"
         android:textAllCaps="false"
         android:textColor="#000"
-        android:textSize="@dimen/textSizetitle"
+        android:textSize="@dimen/dp_15"
 
         />
 
     <Button
         android:id="@+id/btn_left"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonHeight"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_30"
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:layout_marginLeft="10dp"
@@ -31,25 +31,25 @@
         android:text="@string/patient_return"
         android:textAllCaps="false"
         android:textColor="#000"
-        android:textSize="@dimen/buttonsSize"
+        android:textSize="@dimen/dp_15"
         android:visibility="invisible" />
 
     <Button
         android:id="@+id/btn_right"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonHeight"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_30"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="@dimen/dp_10"
         android:background="@drawable/btn_bg"
         android:textAllCaps="false"
         android:textColor="#000"
-        android:textSize="@dimen/buttonsSize" />
+        android:textSize="@dimen/dp_15" />
 
     <com.screening.ui.WifiLoadingAnim
         android:id="@+id/wifiLoadingAnim"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonWidth"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
         android:visibility="gone"
         android:layout_toRightOf="@+id/btn_left"
         />

@@ -26,9 +26,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activity.R;
-import com.huashi.bluetooth.HSBlueApi;
-import com.huashi.bluetooth.HsInterface;
-import com.huashi.bluetooth.IDCardInfo;
+//import com.huashi.bluetooth.HSBlueApi;
+//import com.huashi.bluetooth.HsInterface;
+//import com.huashi.bluetooth.IDCardInfo;
 import com.screening.uitls.BluetoothUtils;
 import com.util.Constss;
 import com.util.SouthUtil;
@@ -44,8 +44,8 @@ public class BluetoothActivity extends AppCompatActivity implements View.OnClick
     private TextView title_bar;
     private ListView blue_listview;//显示搜索到的蓝牙信息
     String filepath = "";
-    private HSBlueApi api;
-    private IDCardInfo ic;
+//    private HSBlueApi api;
+//    private IDCardInfo ic;
     private boolean isConn = false;
     int ret;
     private MyAdapter adapter;
@@ -63,7 +63,7 @@ public class BluetoothActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_bluetooth);
         initView();
         initClick();
-        initData();
+//        initData();
 
     }
 
@@ -137,14 +137,14 @@ public class BluetoothActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.blue_link_break:
                 if (Constss.isConnBlue) {
-                    initBlueBreak();
+//                    initBlueBreak();
                 } else {
                     SouthUtil.showToast(this, getString(R.string.blue_no_connect));
                 }
                 break;
             case R.id.btn_right:
                 if (bluetoothUtils.getBluetooth()) {
-                    initSerchBlue();
+//                    initSerchBlue();
                 } else {
                     Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                     startActivityForResult(intent, REQUEST_ENABLE);
@@ -157,94 +157,82 @@ public class BluetoothActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+//
+///
+//    private void initData() {
+//        adapter = new MyAdapter();
+//        Constss.hsBlueApi.setmInterface(new HsInterface() {
+//            @Override
+//            public void reslut2Devices(Map<String, List<BluetoothDevice>> map) {
+//                bundDevices = map.get("bind");
+//                notDevices = map.get("notBind");
+//                Log.e("已绑定", bundDevices.size() + ",,," + notDevices.size());
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+//    }
 
-    //断开蓝牙
-    private void initBlueBreak() {
-
-        ret = Constss.hsBlueApi.unInit();
-        if (ret == 0) {
-            Constss.isConnBlue = false;
-            SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueDisconnected));
-            edit_bluetooth.setText("");
-        } else {
-            SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueDisconnectFaild));
-        }
-    }
-
-    private void initData() {
-        adapter = new MyAdapter();
-        Constss.hsBlueApi.setmInterface(new HsInterface() {
-            @Override
-            public void reslut2Devices(Map<String, List<BluetoothDevice>> map) {
-                bundDevices = map.get("bind");
-                notDevices = map.get("notBind");
-                Log.e("已绑定", bundDevices.size() + ",,," + notDevices.size());
-                adapter.notifyDataSetChanged();
-            }
-        });
-    }
-
-    //开始搜索蓝牙
-    private void initSerchBlue() {
-        if (Constss.isConnBlue) {
-            SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
-            Log.e("已绑定1", getString(R.string.BlueConnected));
-            return;
-        }
-        if (bundDevices != null && notDevices != null) {
-            bundDevices.clear();
-            notDevices.clear();
-        }
-        diaView = View.inflate(BluetoothActivity.this, R.layout.test, null);
-        tv_ts = (TextView) diaView.findViewById(R.id.tv_ts);
-        blue_listview = (ListView) diaView.findViewById(R.id.lv);
-        blue_listview.setAdapter(adapter);
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.setting_blue_title)).setView(diaView)//在这里把写好的这个listview的布局加载dialog中
-                .setNegativeButton(getString(R.string.button_cancel), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                }).create();
-        dialog.setCanceledOnTouchOutside(false);//使除了dialog以外的地方不能被点击
-        dialog.show();
-        blue_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0 || position == bundDevices.size() + 1) {
-                    return;
-                }
-                dialog.cancel();
-//                showDiolog(getString(R.string.linkingBlue));
-                BluetoothDevice d = null;
-                if (position < bundDevices.size() + 1) {
-                    d = bundDevices.get(position - 1);
-                } else {
-                    d = notDevices.get(position - 2 - bundDevices.size());
-                }
-                int ret = Constss.hsBlueApi.connect(d.getAddress());
-                if (ret == 0) {
-                    Constss.isConnBlue = true;
-                    Log.e("已绑定2", getString(R.string.BlueConnected));
-                    SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
-                    String sam = d.getName();
-                    edit_bluetooth.setText(sam);
-                    bluetoothUtils.initSaveBlue(Constss.Bluetooth_Path, d.getAddress());//蓝牙mac的地址
-                    bluetoothUtils.initSaveBlue(Constss.Bluetooth_Key, d.getName());//蓝牙名称的地址
-                } else {
-                    Log.e("已绑定3", getString(R.string.BlueConnected));
-                    SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
-                }
-                dismissDiolog();
-            }
-        });
-        Log.e("Constss.hsBlueApi", Constss.hsBlueApi + "");
-        Constss.hsBlueApi.scanf();
-        tv_ts.setVisibility(View.INVISIBLE);
-        blue_listview.setVisibility(View.VISIBLE);
-
-    }
+//    //开始搜索蓝牙
+//    private void initSerchBlue() {
+//        if (Constss.isConnBlue) {
+//            SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
+//            Log.e("已绑定1", getString(R.string.BlueConnected));
+//            return;
+//        }
+//        if (bundDevices != null && notDevices != null) {
+//            bundDevices.clear();
+//            notDevices.clear();
+//        }
+//        diaView = View.inflate(BluetoothActivity.this, R.layout.test, null);
+//        tv_ts = (TextView) diaView.findViewById(R.id.tv_ts);
+//        blue_listview = (ListView) diaView.findViewById(R.id.lv);
+//        blue_listview.setAdapter(adapter);
+//        AlertDialog dialog = new AlertDialog.Builder(this)
+//                .setTitle(getString(R.string.setting_blue_title)).setView(diaView)//在这里把写好的这个listview的布局加载dialog中
+//                .setNegativeButton(getString(R.string.button_cancel), new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                }).create();
+//        dialog.setCanceledOnTouchOutside(false);//使除了dialog以外的地方不能被点击
+//        dialog.show();
+//        blue_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                if (position == 0 || position == bundDevices.size() + 1) {
+//                    return;
+//                }
+//                dialog.cancel();
+////                showDiolog(getString(R.string.linkingBlue));
+//                BluetoothDevice d = null;
+//                if (position < bundDevices.size() + 1) {
+//                    d = bundDevices.get(position - 1);
+//                } else {
+//                    d = notDevices.get(position - 2 - bundDevices.size());
+//                }
+//                int ret = Constss.hsBlueApi.connect(d.getAddress());
+//                if (ret == 0) {
+//                    Constss.isConnBlue = true;
+//                    Log.e("已绑定2", getString(R.string.BlueConnected));
+//                    SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
+//                    String sam = d.getName();
+//                    edit_bluetooth.setText(sam);
+//                    bluetoothUtils.initSaveBlue(Constss.Bluetooth_Path, d.getAddress());//蓝牙mac的地址
+//                    bluetoothUtils.initSaveBlue(Constss.Bluetooth_Key, d.getName());//蓝牙名称的地址
+//                } else {
+//                    Log.e("已绑定3", getString(R.string.BlueConnected));
+//                    SouthUtil.showToast(BluetoothActivity.this, getString(R.string.BlueConnected));
+//                }
+//                dismissDiolog();
+//            }
+//        });
+//        Log.e("Constss.hsBlueApi", Constss.hsBlueApi + "");
+//        Constss.hsBlueApi.scanf();
+//        tv_ts.setVisibility(View.INVISIBLE);
+//        blue_listview.setVisibility(View.VISIBLE);
+//
+//    }
 
     class MyAdapter extends BaseAdapter {
 

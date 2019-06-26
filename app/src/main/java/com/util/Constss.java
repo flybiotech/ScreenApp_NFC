@@ -2,7 +2,7 @@ package com.util;
 
 import android.Manifest;
 
-import com.huashi.bluetooth.HSBlueApi;
+//import com.huashi.bluetooth.HSBlueApi;
 import com.model.DevModel;
 
 /**
@@ -55,7 +55,7 @@ public class Constss {
     public static String Bluetooth_Path="blue_path";//本地缓存的蓝牙地址的key值
     public static String Bluetooth_Key="blue_key";//本地缓存的蓝牙名称的key值
     public static boolean isConnBlue=false;//蓝牙是否连接
-    public static HSBlueApi hsBlueApi;//
+//    public static HSBlueApi hsBlueApi;//
     //loginActivity
     public static final String LOGIN_USER_TYPE = "NOMAL";
     public static final String LOGIN_DELETEALL_TYPE = "DELETEALL";//恢复出厂设置

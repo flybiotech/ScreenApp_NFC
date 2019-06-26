@@ -13,8 +13,10 @@
     <Button
         android:id="@+id/bt_delete"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_30"
         android:layout_marginTop="100dp"
         android:background="@drawable/btn_bg"
-        android:text="@string/setting_delete_all" />
+        android:text="@string/setting_delete_all"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"/>
 </RelativeLayout>

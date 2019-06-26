@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:divider="@color/weakRed"
         android:dividerHeight="1.5dp"
-        android:textSize="@dimen/textViewNameSize"
+        android:textSize="@dimen/dp_15"
         >
 
 

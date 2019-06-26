@@ -16,29 +16,29 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pId"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <TextView
                     android:id="@+id/tv_caselist_bianhao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12"  />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -46,20 +46,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pName"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12"  />
 
                 <TextView
                     android:id="@+id/tv_caselist_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12"  />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -67,22 +67,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pAge"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <TextView
                     android:id="@+id/tv_caselist_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12"  />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -90,22 +90,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/RequiredPhone"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <TextView
                     android:id="@+id/tv_caselist_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
@@ -113,34 +113,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/RequiredID"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12"  />
 
                 <TextView
                     android:id="@+id/tv_caselist_idcard"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12"  />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_5"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/isSceen"
-                    android:textSize="@dimen/textviewSize" />
+                    android:textSize="@dimen/dp_12" />
 
                 <TextView
                     android:id="@+id/tv_caselist_isSceen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="@dimen/textviewSize" />
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/dp_12"  />
             </LinearLayout>
 
         </LinearLayout>

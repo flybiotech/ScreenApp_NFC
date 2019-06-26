@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.widget.Toast;
 
-import com.huashi.bluetooth.HSBlueApi;
+//import com.huashi.bluetooth.HSBlueApi;
 import com.screening.uitls.BluetoothUtils;
 import com.util.Constss;
 
@@ -21,7 +21,7 @@ import com.util.Constss;
 public class BaseActivity extends AppCompatActivity {
     Context context;
     private boolean isRegistered = false;
-    private HSBlueApi api;
+//    private HSBlueApi api;
     String filepath = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +44,15 @@ public class BaseActivity extends AppCompatActivity {
     private void initView() {
         BluetoothUtils bluetoothUtils=new BluetoothUtils(this);
         filepath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/wltlib";// 授权目录
-        api = new HSBlueApi(this, filepath);
-        api.init();
-        int ret = api.connect(bluetoothUtils.initGetBlue(Constss.Bluetooth_Path));
-        if (ret == 0){
-            Constss.isConnBlue=true;
-            Toast.makeText(BaseActivity.this,"连接成功",Toast.LENGTH_LONG).show();
-        }else {
-            Constss.isConnBlue=true;
-        }
+//        api = new HSBlueApi(this, filepath);
+//        api.init();
+//        int ret = api.connect(bluetoothUtils.initGetBlue(Constss.Bluetooth_Path));
+//        if (ret == 0){
+//            Constss.isConnBlue=true;
+//            Toast.makeText(BaseActivity.this,"连接成功",Toast.LENGTH_LONG).show();
+//        }else {
+//            Constss.isConnBlue=true;
+//        }
     }
 
 

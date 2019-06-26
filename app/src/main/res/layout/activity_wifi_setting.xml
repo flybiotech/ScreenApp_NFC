@@ -13,22 +13,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dp_20"
         android:orientation="horizontal">
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="@dimen/dp_10"
             android:layout_weight="1" />
 
         <Button
             android:id="@+id/btn_wifisetting_getImageSoft"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_30"
             android:layout_weight="1"
             android:background="@drawable/btn_bg_select"
             android:text="@string/setting_Treasures_of_vision_wifi"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:textSize="@dimen/dp_12"/>
 
         <View
             android:layout_width="match_parent"
@@ -38,12 +39,12 @@
         <Button
             android:id="@+id/btn_wifisetting_lan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_30"
             android:layout_weight="1"
             android:background="@drawable/btn_bg_select"
             android:text="@string/setting_printer_wifi"
             android:textAllCaps="false"
-            android:textSize="13sp" />
+            android:textSize="@dimen/dp_12" />
 
         <View
             android:layout_width="match_parent"
@@ -65,7 +66,7 @@
             android:layout_weight="3"
             android:text="@string/setting_WIFI_filters"
             android:textAllCaps="false"
-            android:textSize="@dimen/textViewNameSize" />
+            android:textSize="@dimen/dp_13" />
 
         <EditText
             android:id="@+id/edit_filters"
@@ -74,6 +75,7 @@
             android:layout_weight="1"
             android:hint="@string/setting_WIFI_filters_hint"
             android:textAllCaps="false"
+            android:textSize="@dimen/dp_13"
 
             />
 
@@ -83,7 +85,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/dp_30"
         android:orientation="horizontal">
 
         <TextView
@@ -93,7 +95,7 @@
             android:layout_weight="3"
             android:text="@string/setting_WIFI_name"
             android:textAllCaps="false"
-            android:textSize="@dimen/textViewNameSize" />
+            android:textSize="@dimen/dp_13" />
 
         <EditText
             android:id="@+id/edit_wifiSetting_name01"
@@ -102,7 +104,7 @@
             android:layout_weight="1"
             android:hint="@string/setting_WIFI_name_hint"
             android:textAllCaps="false"
-
+            android:textSize="@dimen/dp_13"
             />
 
     </LinearLayout>
@@ -111,7 +113,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dp_20"
         android:orientation="horizontal">
 
         <TextView
@@ -121,7 +123,7 @@
             android:layout_weight="3"
             android:text="@string/setting_WIFI_password"
             android:textAllCaps="false"
-            android:textSize="@dimen/textViewNameSize" />
+            android:textSize="@dimen/dp_13" />
 
         <EditText
             android:id="@+id/edit_wifiSetting_pass01"
@@ -129,6 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/setting_WIFI_password_hint"
+            android:textSize="@dimen/dp_13"
             android:textAllCaps="false" />
 
     </LinearLayout>
@@ -141,8 +144,8 @@
         <Button
             android:id="@+id/btn_wifiSetting_clear01"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_40"
             android:background="@drawable/btn_bg"
             android:text="@string/clear_wifi"
             android:textAllCaps="false" />
@@ -150,7 +153,7 @@
         <Button
             android:id="@+id/btn_wifiSetting_save01"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dp_30"
             android:layout_alignParentRight="true"
             android:layout_marginRight="40dp"
             android:background="@drawable/btn_bg"

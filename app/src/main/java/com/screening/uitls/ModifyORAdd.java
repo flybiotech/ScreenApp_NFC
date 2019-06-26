@@ -255,6 +255,8 @@ public class ModifyORAdd {
         et_pDetailedaddress.setText("");
         et_pRemarks.setText("");
         et_pRequiredGene.setText("");
+        et_pRequiredDNA.setText("");
+        et_pRequiredOther.setText("");
         sp_marray = "无";
         sp_contraception = "无";
     }

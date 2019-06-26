@@ -270,7 +270,7 @@
     <string name="user_name_screeing">筛查人员</string>
     <string name="nonet">WIFI未连接，请连接正确的WIFI。</string>
     <string name="errornet">已连接的WIFI无法进行网络访问，点击确定跳转至WIFI设置界面。</string>
-    <string name="creatingScreen">正在创建筛查...</string>
+    <string name="creatingScreen">正在上传数据...</string>
     <string name="doctorNO">医生不存在，请重新设置</string>
     <string name="verifyFailed">网络异常，验证失败</string>
     <string name="verifyProceing">正在验证医生信息...</string>
@@ -293,7 +293,7 @@
     <string name="scanningRelate">创建筛查相关</string>
     <string name="startbackup_adminSetAct">开始进行备份</string>
     <string name="setting_area_null">请先填写地区信息</string>
-    <string name="setting_delete_all">开始清除所有的数据</string>
+    <string name="setting_delete_all">清除所有的数据</string>
     <string name="setting_delete_title">恢复出厂设置界面</string>
     <string name="deletesingle_title">受检者测试信息界面</string>
     <string name="deletesingle_rightbtn">选择</string>
@@ -351,6 +351,7 @@
     <string name="addfaild">登记失败</string>
     <string name="addPatient">新增信息</string>
     <string name="detialMessage">详细信息</string>
+    <string name="listMessage">信息列表</string>
     <string name="case_image_up">上翻</string>
     <string name="case_image_down">上翻</string>
     <string name="case_image_show">图片展示</string>

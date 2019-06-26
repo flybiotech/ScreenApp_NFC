@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.huashi.bluetooth.HSBlueApi;
+//import com.huashi.bluetooth.HSBlueApi;
 
 import java.lang.reflect.Method;
 import java.util.Set;

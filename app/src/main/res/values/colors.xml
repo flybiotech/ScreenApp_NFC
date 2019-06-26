@@ -87,5 +87,6 @@
     <color name="red_pressed">#FF6666</color>
     <color name="gray_dialog">#666666</color>
 
-
+    <color name="screen_have">#EF5350</color>
+    <color name="screen_no">#A5D6A7</color>
 </resources>

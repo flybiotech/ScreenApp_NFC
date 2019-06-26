@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -16,6 +18,7 @@ import android.widget.LinearLayout;
 
 import com.activity.BaseActivity;
 import com.activity.R;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.logger.LogHelper;
 import com.screening.api.LoginContractApi;
 import com.screening.impl.ILoginPresenterImpl;
@@ -54,8 +57,30 @@ public class LoginActivity extends BaseActivity implements LoginContractApi.ILog
         }
         LogHelper.v("");
         initView();
-    }
 
+        getWidthDP();
+
+    }
+    String TAG = "MainActivityTAG";
+    //得到屏幕的最小宽度，以此作为屏幕适配的依据
+    private void getWidthDP(){
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int heightPixels = ScreenUtils.getScreenHeight();
+        int widthPixels = ScreenUtils.getScreenWidth();
+        float density = dm.density;
+        float heightDP = heightPixels / density;
+        float widthDP = widthPixels / density;
+        float smallestWidthDP;
+        if(widthDP < heightDP) {
+            smallestWidthDP = widthDP;
+        }else {
+            smallestWidthDP = heightDP;
+        }
+        int DP = (int)smallestWidthDP;
+//        SPUtils.put(LoginActivity.this, Const.smallestWidthDP,DP);
+        Log.e(TAG+"_aa",smallestWidthDP+"");
+    }
     private void initView() {
         loginNameEdit = (EditText) findViewById(R.id.edit_loginName);
         loginPassEdit = (EditText) findViewById(R.id.edit_loginPass);

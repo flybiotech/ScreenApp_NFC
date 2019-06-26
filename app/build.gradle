@@ -80,7 +80,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation files('libs/commons-net-2.2.jar')
-    implementation files('libs/HSBlue增加港澳台.jar')
     implementation files('libs/jxl.jar')
     implementation project(':okhttputils')
     implementation project(':photoview')
@@ -127,7 +126,15 @@ dependencies {
     implementation files('libs/ant.jar')
     implementation rootProject.ext.dependencies["dialog"]
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
+    implementation 'q.rorbin:VerticalTabLayout:1.2.5'
+    //依赖 U8 SDK
+    implementation(name: 'cwsdk-release', ext: 'aar')
 }
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'   // aar目录
+    }
 }

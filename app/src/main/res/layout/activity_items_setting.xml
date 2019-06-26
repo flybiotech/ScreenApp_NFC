@@ -9,7 +9,7 @@
     <include layout="@layout/title_bar" />
     <View
         android:layout_width="wrap_content"
-        android:layout_height="5dp"
+        android:layout_height="@dimen/dp_3"
         android:background="#fff" />
 
     <ScrollView
@@ -50,7 +50,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_5"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -67,10 +67,10 @@
                         <EditText
                             android:id="@+id/et_hpv"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_20"
                             android:layout_marginRight="@dimen/dp_5"
                             android:gravity="center_vertical"
-                            android:textSize="@dimen/dp_15"
+                            android:textSize="@dimen/dp_12"
                             android:layout_weight="5"
                             android:hint="@string/RequiredHPV_Mark"
                             android:paddingLeft="@dimen/dp_5"
@@ -81,7 +81,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -102,10 +102,10 @@
                             <EditText
                                 android:id="@+id/et_hpv_size"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_20"
                                 android:layout_marginRight="@dimen/dp_5"
                                 android:gravity="center_vertical"
-                                android:textSize="@dimen/dp_15"
+                                android:textSize="@dimen/dp_12"
                                 android:layout_weight="5"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:hint="@string/RequiredHPV_size"
@@ -117,7 +117,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -149,9 +149,9 @@
                                 <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:id="@+id/switch_hpv"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/dp_30"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
                                     android:layout_toRightOf="@id/tx_lamp0"
                                     app:sb_checked_color="@color/weakRed1" />
 
@@ -168,7 +168,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_3"
                 android:background="#fff" />
 
             <LinearLayout
@@ -176,7 +176,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_3"
                 android:layout_marginRight="@dimen/dp_3"
-                android:layout_marginTop="@dimen/dp_4"
                 android:background="@drawable/tablelayout_bg_item"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/dp_1"
@@ -200,7 +199,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_5"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -217,10 +216,10 @@
                         <EditText
                             android:id="@+id/et_cytology"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_20"
                             android:layout_marginRight="@dimen/dp_5"
                             android:gravity="center_vertical"
-                            android:textSize="@dimen/dp_15"
+                            android:textSize="@dimen/dp_12"
                             android:layout_weight="5"
                             android:paddingLeft="@dimen/dp_5"
                             android:hint="@string/RequiredCytology_Mark"
@@ -231,7 +230,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -252,10 +251,10 @@
                             <EditText
                                 android:id="@+id/et_cytology_size"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_20"
                                 android:layout_marginRight="@dimen/dp_5"
                                 android:gravity="center_vertical"
-                                android:textSize="@dimen/dp_15"
+                                android:textSize="@dimen/dp_12"
                                 android:layout_weight="5"
                                 android:hint="@string/RequiredCytology_size"
                                 android:inputType="number"
@@ -267,7 +266,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -299,7 +298,7 @@
                                 <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:id="@+id/switch_cytology"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/dp_30"
+                                    android:layout_height="@dimen/dp_25"
                                     android:layout_marginLeft="10dp"
                                     android:layout_marginRight="10dp"
                                     android:layout_toRightOf="@id/tx_lamp0"
@@ -318,7 +317,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_3"
                 android:background="#fff" />
 
             <LinearLayout
@@ -326,7 +325,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_3"
                 android:layout_marginRight="@dimen/dp_3"
-                android:layout_marginTop="@dimen/dp_4"
                 android:background="@drawable/tablelayout_bg_item"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/dp_1"
@@ -350,7 +348,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_5"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -367,10 +365,10 @@
                         <EditText
                             android:id="@+id/et_gene"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_20"
                             android:layout_marginRight="@dimen/dp_5"
                             android:gravity="center_vertical"
-                            android:textSize="@dimen/dp_15"
+                            android:textSize="@dimen/dp_12"
                             android:layout_weight="5"
                             android:paddingLeft="@dimen/dp_5"
                             android:hint="@string/RequiredGene_Mark"
@@ -381,7 +379,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -402,10 +400,10 @@
                             <EditText
                                 android:id="@+id/et_gene_size"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_20"
                                 android:layout_marginRight="@dimen/dp_5"
                                 android:gravity="center_vertical"
-                                android:textSize="@dimen/dp_15"
+                                android:textSize="@dimen/dp_12"
                                 android:layout_weight="5"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:hint="@string/RequiredGene_size"
@@ -417,7 +415,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -449,9 +447,9 @@
                                 <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:id="@+id/switch_gene"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/dp_30"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
                                     android:layout_toRightOf="@id/tx_lamp0"
                                     app:sb_checked_color="@color/weakRed1" />
 
@@ -468,7 +466,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_3"
                 android:background="#fff" />
 
             <LinearLayout
@@ -476,7 +474,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_3"
                 android:layout_marginRight="@dimen/dp_3"
-                android:layout_marginTop="@dimen/dp_4"
                 android:background="@drawable/tablelayout_bg_item"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/dp_1"
@@ -500,7 +497,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_5"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -517,10 +514,10 @@
                         <EditText
                             android:id="@+id/et_dna"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_20"
                             android:layout_marginRight="@dimen/dp_5"
                             android:gravity="center_vertical"
-                            android:textSize="@dimen/dp_15"
+                            android:textSize="@dimen/dp_12"
                             android:layout_weight="5"
                             android:background="@drawable/edittext_select"
                             android:hint="@string/Requireddna_Mark"
@@ -531,7 +528,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -552,10 +549,10 @@
                             <EditText
                                 android:id="@+id/et_dna_size"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_20"
                                 android:layout_marginRight="@dimen/dp_5"
                                 android:gravity="center_vertical"
-                                android:textSize="@dimen/dp_15"
+                                android:textSize="@dimen/dp_12"
                                 android:layout_weight="5"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:hint="@string/Requireddna_size"
@@ -567,7 +564,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -599,9 +596,9 @@
                                 <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:id="@+id/switch_dna"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/dp_30"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
                                     android:layout_toRightOf="@id/tx_lamp0"
                                     app:sb_checked_color="@color/weakRed1" />
 
@@ -618,7 +615,7 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="5dp"
+                android:layout_height="@dimen/dp_3"
                 android:background="#fff" />
 
             <LinearLayout
@@ -626,7 +623,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_3"
                 android:layout_marginRight="@dimen/dp_3"
-                android:layout_marginTop="@dimen/dp_4"
                 android:background="@drawable/tablelayout_bg_item"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/dp_1"
@@ -650,7 +646,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_5"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -667,10 +663,10 @@
                         <EditText
                             android:id="@+id/et_other"
                             android:layout_width="0dp"
-                            android:layout_height="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_20"
                             android:layout_marginRight="@dimen/dp_5"
                             android:gravity="center_vertical"
-                            android:textSize="@dimen/dp_15"
+                            android:textSize="@dimen/dp_12"
                             android:layout_weight="5"
                             android:paddingLeft="@dimen/dp_5"
                             android:hint="@string/Requiredother_size"
@@ -681,7 +677,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -702,10 +698,10 @@
                             <EditText
                                 android:id="@+id/et_other_size"
                                 android:layout_width="0dp"
-                                android:layout_height="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_20"
                                 android:layout_marginRight="@dimen/dp_5"
                                 android:gravity="center_vertical"
-                                android:textSize="@dimen/dp_15"
+                                android:textSize="@dimen/dp_12"
                                 android:layout_weight="5"
                                 android:paddingLeft="@dimen/dp_5"
                                 android:hint="@string/RequiredHPV_size"
@@ -717,7 +713,7 @@
 
                     <View
                         android:layout_width="wrap_content"
-                        android:layout_height="5dp"
+                        android:layout_height="@dimen/dp_3"
                         android:background="#fff" />
 
                     <LinearLayout
@@ -749,9 +745,9 @@
                                 <com.suke.widget.SwitchButton xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:id="@+id/switch_other"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="@dimen/dp_30"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
                                     android:layout_toRightOf="@id/tx_lamp0"
                                     app:sb_checked_color="@color/weakRed1" />
 

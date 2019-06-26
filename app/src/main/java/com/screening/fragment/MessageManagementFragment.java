@@ -219,9 +219,9 @@ public class MessageManagementFragment extends Fragment implements View.OnClickL
                 .setLabel("年", "月", "日", "", "", "")//默认设置为年月日时分秒
                 .isCenterLabel(false)
                 .setDividerColor(Color.RED)
-                .setTextColorCenter(Color.RED)//设置选中项的颜色
-                .setTextColorOut(Color.BLUE)//设置没有被选中项的颜色
-                .setContentSize(25)
+                .setTextColorCenter(R.color.screen_have)//设置选中项的颜色
+                .setTextColorOut(R.color.screen_no)//设置没有被选中项的颜色
+                .setContentSize(20)
                 .build();
 
         pVTime.show();
