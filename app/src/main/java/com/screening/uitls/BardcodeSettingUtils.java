@@ -1,6 +1,7 @@
 package com.screening.uitls;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -89,6 +90,7 @@ public class BardcodeSettingUtils {
         if (state) {
             editText.setEnabled(true);
             image.setEnabled(true);
+            image.setVisibility(View.VISIBLE);
             switch (temp) {
                 case 1:
                     Constant.hpv_id = barcodeBean.getIdentification();
@@ -114,6 +116,7 @@ public class BardcodeSettingUtils {
         } else {
             editText.setEnabled(false);
             image.setEnabled(false);
+            image.setVisibility(View.GONE);
         }
     }
 

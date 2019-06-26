@@ -175,8 +175,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         observable = Observable.create(new ObservableOnSubscribe<String>() {
             @Override
             public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-
-//                Thread.sleep(1000);
                 searchMsg = lib.jthNet_SearchDev_old();
                 String msgType = analyzeDevMsg(searchMsg);
                 LogHelper.e("msgType= " + msgType + " ,isFront= " + isFront);
@@ -462,9 +460,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         et_pRequiredID.setText(people.getPeopleIDCode());
         et_pDate.setText(people.getPeopleBirthday().substring(0, 4)+"."+people.getPeopleBirthday().substring(4, 6)+"."+people.getPeopleBirthday().substring(6, 8));
         et_pName.setText(people.getPeopleName());
-//        sfz_nation.setText(people.getPeopleNation());
-//        sfz_sex.setText(people.getPeopleSex());
-//        sfz_year.setText(people.getPeopleBirthday().substring(0, 4));
         Log.e("scanshow",people.getPeopleIDCode()+",," +people.getPeopleBirthday().substring(4, 6)+",,"+people.getPeopleName()+",,"+people.getPeopleNation()+",,"+people.getPeopleBirthday().substring(0, 4));
     }
 

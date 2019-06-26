@@ -22,7 +22,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class BarcodeSettingActivity extends AppCompatActivity implements View.OnClickListener, SwitchButton.OnCheckedChangeListener {
     private EditText et_hpv, et_hpv_size, et_cytology, et_cytology_size, et_gene, et_gene_size, et_dna, et_dna_size, et_other, et_other_size;
-    private Button btn_left, btn_right;
+    private Button btn_left, btn_right,bt_clearhpv,bt_cleartct,bt_cleargene,bt_cleardna,bt_clearother;
     private SwitchButton switch_hpv, switch_cytology, switch_gene, switch_dna, switch_other;
     private TextView title_bar;
     private boolean hpv_state = false, cytology_state = false, gene_state = false, dna_state = false, other_state = false;
@@ -71,6 +71,11 @@ public class BarcodeSettingActivity extends AppCompatActivity implements View.On
         title_bar = findViewById(R.id.title_bar);
         title_bar.setText(getString(R.string.setting_scan_setting));
         btn_left.setVisibility(View.VISIBLE);
+        bt_clearhpv = findViewById(R.id.bt_clearhpv);
+        bt_cleartct = findViewById(R.id.bt_cleartct);
+        bt_cleargene = findViewById(R.id.bt_cleargene);
+        bt_cleardna = findViewById(R.id.bt_cleardna);
+        bt_clearother = findViewById(R.id.bt_clearother);
     }
 
     private void initClick() {
@@ -83,6 +88,11 @@ public class BarcodeSettingActivity extends AppCompatActivity implements View.On
         switch_gene.setOnCheckedChangeListener(this);
         switch_dna.setOnCheckedChangeListener(this);
         switch_other.setOnCheckedChangeListener(this);
+        bt_clearhpv.setOnClickListener(this);
+        bt_cleartct.setOnClickListener(this);
+        bt_cleargene.setOnClickListener(this);
+        bt_cleardna.setOnClickListener(this);
+        bt_clearother.setOnClickListener(this);
     }
 
     /**
@@ -135,7 +145,6 @@ public class BarcodeSettingActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             //设置完成
             case R.id.btn_wifiSetting_save01:
@@ -143,10 +152,35 @@ public class BarcodeSettingActivity extends AppCompatActivity implements View.On
                 finish();
                 break;
             case R.id.btn_left:
-
                 finish();
                 break;
+            case R.id.bt_clearhpv:
+                clearBarcode(et_hpv,et_hpv_size,switch_hpv);
+                BardcodeSettingUtils.setBarcode(BarcodeSettingActivity.this,Constant.hpv_key,"","",false);
+                break;
+            case R.id.bt_cleartct:
+                clearBarcode(et_cytology,et_cytology_size,switch_cytology);
+                BardcodeSettingUtils.setBarcode(BarcodeSettingActivity.this,Constant.cytology_key,"","",false);
+                break;
+            case R.id.bt_cleargene:
+                clearBarcode(et_gene,et_gene_size,switch_gene);
+                BardcodeSettingUtils.setBarcode(BarcodeSettingActivity.this,Constant.gene_key,"","",false);
+                break;
+            case R.id.bt_cleardna:
+                clearBarcode(et_dna,et_dna_size,switch_dna);
+                BardcodeSettingUtils.setBarcode(BarcodeSettingActivity.this,Constant.dna_key,"","",false);
+                break;
+            case R.id.bt_clearother:
+                clearBarcode(et_other,et_other_size,switch_other);
+                BardcodeSettingUtils.setBarcode(BarcodeSettingActivity.this,Constant.other_key,"","",false);
+                break;
         }
+    }
+
+    private void clearBarcode(EditText et_iden,EditText et_size,SwitchButton sb_clear){
+        et_iden.setText("");
+        et_size.setText("");
+//        sb_clear.setChecked(false);
     }
 
     /**

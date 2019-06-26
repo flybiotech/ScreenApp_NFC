@@ -160,6 +160,15 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="启用" />
+
+                                <Button
+                                    android:id="@+id/bt_clearhpv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_22"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/dp_45"
+                                    android:background="@drawable/btn_bg"
+                                    android:text="重置" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -299,8 +308,8 @@
                                     android:id="@+id/switch_cytology"
                                     android:layout_width="wrap_content"
                                     android:layout_height="@dimen/dp_25"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_marginRight="10dp"
+                                    android:layout_marginLeft="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
                                     android:layout_toRightOf="@id/tx_lamp0"
                                     app:sb_checked_color="@color/weakRed1" />
 
@@ -309,6 +318,14 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="启用" />
+                                <Button
+                                    android:id="@+id/bt_cleartct"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_22"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/dp_48"
+                                    android:background="@drawable/btn_bg"
+                                    android:text="重置" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -458,6 +475,14 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="启用" />
+                                <Button
+                                    android:id="@+id/bt_cleargene"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_22"
+                                    android:background="@drawable/btn_bg"
+                                    android:text="重置"
+                                    android:layout_marginLeft="@dimen/dp_45"
+                                    android:layout_gravity="center_vertical"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -607,6 +632,14 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="启用" />
+                                <Button
+                                    android:id="@+id/bt_cleardna"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_22"
+                                    android:background="@drawable/btn_bg"
+                                    android:text="重置"
+                                    android:layout_marginLeft="@dimen/dp_45"
+                                    android:layout_gravity="center_vertical"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -756,12 +789,23 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center"
                                     android:text="启用" />
+                                <Button
+                                    android:id="@+id/bt_clearother"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_22"
+                                    android:background="@drawable/btn_bg"
+                                    android:text="重置"
+                                    android:layout_marginLeft="@dimen/dp_45"
+                                    android:layout_gravity="center_vertical"/>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+
+
     </ScrollView>
 
 
