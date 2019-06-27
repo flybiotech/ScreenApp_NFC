@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.EditText;
 
 import com.activity.R;
+import com.jakewharton.rxbinding3.widget.RxTextView;
 import com.screening.model.FTPBean;
 import com.screening.model.ListMessage;
 import com.util.ToastUtils;
@@ -16,9 +17,13 @@ import org.litepal.LitePal;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
 import es.dmoral.toasty.Toasty;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Authenticator;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -329,6 +334,162 @@ public class VerificationUtils {
         }
     }
 
+    /**
+     * 实时监测输入框的变化
+     */
+    public static void getChange(EditText et_hpv, EditText et_tct, EditText et_gene, EditText et_dna, EditText et_other,EditText et_idCard){
+        RxTextView.textChanges(et_hpv)
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<CharSequence>() {
+                    @Override
+                    public void accept(CharSequence charSequence) throws Exception {
+                        verifaicationBarcode(et_hpv,et_idCard,1);
+                    }
+                });
+        RxTextView.textChanges(et_tct)
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<CharSequence>() {
+                    @Override
+                    public void accept(CharSequence charSequence) throws Exception {
+                        verifaicationBarcode(et_tct,et_idCard,2);
+                    }
+                });
+        RxTextView.textChanges(et_gene)
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<CharSequence>() {
+                    @Override
+                    public void accept(CharSequence charSequence) throws Exception {
+                        verifaicationBarcode(et_gene,et_idCard,3);
+                    }
+                });
+        RxTextView.textChanges(et_dna)
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<CharSequence>() {
+                    @Override
+                    public void accept(CharSequence charSequence) throws Exception {
+                        verifaicationBarcode(et_dna,et_idCard,4);
+                    }
+                });
+        RxTextView.textChanges(et_other)
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<CharSequence>() {
+                    @Override
+                    public void accept(CharSequence charSequence) throws Exception {
+                        verifaicationBarcode(et_other,et_idCard,5);
+                    }
+                });
+    }
+
+    /**
+     * 判断该码是否已被使用
+     */
+    private static void verifaicationBarcode(EditText et_input,EditText et_idCard,int style){
+        String msg = et_input.getText().toString().trim();
+        String idCard = et_idCard.getText().toString().trim();
+        boolean checkResult = false;
+        switch (style){
+            case 1://hpv
+                if (!msg.equals("") && et_input.isEnabled()) {
+                    if (!msg.contains(Constant.hpv_id) || !String.valueOf(msg.length()).equals(Constant.hpv_size)) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionBarcodeResult(1);
+                        }
+                        return;
+                    }
+                    checkResult = getChecking(1, msg, idCard);
+                    //hpv已使用
+                    if (checkResult) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionResult(2);
+                        }
+                        return;
+                    }
+                }
+                break;
+            case 2:
+                if (!msg.equals("") && et_input.isEnabled()) {
+                    if (!msg.contains(Constant.cytology_id) || !String.valueOf(msg.length()).equals(Constant.cytology_size)) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionBarcodeResult(2);
+                        }
+                        return;
+                    }
+                    checkResult = getChecking(2, msg, idCard);
+                    //细胞学已使用
+                    if (checkResult) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionResult(3);
+                        }
+                        return;
+                    }
+                }
+                break;
+            case 3:
+                if (!msg.equals("") && et_input.isEnabled()) {
+                    if (!msg.contains(Constant.gene_id) || !String.valueOf(msg.length()).equals(Constant.gene_size)) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionBarcodeResult(3);
+                        }
+                        return;
+                    }
+                    checkResult = getChecking(3, msg, idCard);
+                    //细胞学已使用
+                    if (checkResult) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionResult(4);
+                        }
+                        return;
+                    }
+                }
+                break;
+            case 4:
+                if (!msg.equals("") && et_input.isEnabled()) {
+                    if (!msg.contains(Constant.dna_id) || !String.valueOf(msg.length()).equals(Constant.dna_size)) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionBarcodeResult(4);
+                        }
+                        return;
+                    }
+                    checkResult = getChecking(4, msg, idCard);
+                    //细胞学已使用
+                    if (checkResult) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionResult(5);
+                        }
+                        return;
+                    }
+                }
+                break;
+            case 5:
+                if (!msg.equals("") && et_input.isEnabled()) {
+                    if (!msg.contains(Constant.other_id) || !String.valueOf(msg.length()).equals(Constant.other_size)) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionBarcodeResult(5);
+                        }
+                        return;
+                    }
+                    checkResult = getChecking(5, msg, idCard);
+                    //细胞学已使用
+                    if (checkResult) {
+                        if (getVerificationResult != null) {
+                            getVerificationResult.getVerifitionResult(6);
+                        }
+                        return;
+                    }
+                }
+                break;
+        }
+    }
 
     public interface VerificationResult {
         void getResult(int code);

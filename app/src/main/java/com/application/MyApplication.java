@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,6 +17,7 @@ import android.util.Log;
 
 import com.activity.R;
 //import com.huashi.bluetooth.HSBlueApi;
+import com.cw.cwsdk.cw;
 import com.logger.LogHelper;
 import com.logger.TxtFormatStrategy;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -154,6 +156,34 @@ public class MyApplication extends LitePalApplication{
 
     }
 
+
+    @Override
+    public void onTerminate() {
+        // 程序终止的时候执行
+        Log.d(TAG, "onTerminate");
+        cw.setDownGpioSTM32();
+        super.onTerminate();
+    }
+
+    @Override
+    public void onLowMemory() {
+        // 低内存的时候执行
+        Log.d(TAG, "onLowMemory");
+        super.onLowMemory();
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        // 程序在内存清理的时候执行
+        Log.d(TAG, "onTrimMemory");
+        super.onTrimMemory(level);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        Log.d(TAG, "onConfigurationChanged");
+        super.onConfigurationChanged(newConfig);
+    }
 
 
 

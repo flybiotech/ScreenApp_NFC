@@ -131,6 +131,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         initSelectItemClick();
         initEditTextClick();
         WifiConnectUtil.Companion.getInstance().setWifiConnectListener(this, null);
+        VerificationUtils.getChange(et_pRequiredHPV,et_pRequiredCytology,et_pRequiredGene,et_pRequiredDNA,et_pRequiredOther,et_pRequiredID);
         cw.BarCodeAPI(this).setOnBarCodeDataListener(this);
         cw.FingerPrintAPI().Scanner(this);
         getData();
@@ -746,7 +747,14 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         isFront = true;
         //建议在onResume里放，息屏后可以省电
         cw.BarCodeAPI(ScanShowActivity.this).openBarCodeReceiver();
+
+
+
+
         cw.AsyncParseSFZ(this).openSerialPort(this);
+        boolean state = cw.BarCodeAPI(ScanShowActivity.this).isScannerServiceRunning(ScanShowActivity.this);
+
+        Log.e("Scanshow",state + "0000000");
     }
 
 
@@ -949,6 +957,8 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         isFront = false;
         dismissDiolog();
         stopAnim();
+        //关闭身份证串口，省电
+        cw.AsyncParseSFZ(this).closeSerialPort();
     }
 
     @Override

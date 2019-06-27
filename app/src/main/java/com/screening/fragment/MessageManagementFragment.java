@@ -220,7 +220,7 @@ public class MessageManagementFragment extends Fragment implements View.OnClickL
                 .isCenterLabel(false)
                 .setDividerColor(Color.RED)
                 .setTextColorCenter(R.color.screen_have)//设置选中项的颜色
-                .setTextColorOut(R.color.screen_no)//设置没有被选中项的颜色
+                .setTextColorOut(Color.BLACK)//设置没有被选中项的颜色
                 .setContentSize(20)
                 .build();
 

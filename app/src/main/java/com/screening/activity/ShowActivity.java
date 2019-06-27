@@ -427,6 +427,7 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
         initSelectItemClick();
         initEditTextClick();
         WifiConnectUtil.Companion.getInstance().setWifiConnectListener(this, null);
+        VerificationUtils.getChange(et_pRequiredHPV,et_pRequiredCytology,et_pRequiredGene,et_pRequiredDNA,et_pRequiredOther,et_pRequiredID);
         cw.BarCodeAPI(this).setOnBarCodeDataListener(this);
     }
 
