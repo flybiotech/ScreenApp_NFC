@@ -27,11 +27,11 @@ import android.widget.Toast;
 import com.Manager.DataManager;
 import com.activity.LiveVidActivity;
 import com.activity.R;
-import com.cw.cwsdk.cw;
-import com.cw.cwsdk.u8API.barcode.BarCodeAPI;
-import com.cw.cwsdk.u8API.idcard.AsyncParseSFZ;
-import com.cw.cwsdk.u8API.idcard.ParseSFZAPI;
-import com.kalu.ocr.CaptureActivity;
+import com.application.MyApplication;
+import com.cw.barcodesdk.SoftDecodingAPI;
+import com.cw.idcardsdk.AsyncParseSFZ;
+import com.cw.idcardsdk.ParseSFZAPI;
+import com.cw.serialportsdk.cw;
 import com.logger.LogHelper;
 import com.model.DevModel;
 import com.screening.model.BarcodeBean;
@@ -77,7 +77,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDialogButtonClickListener, View.OnClickListener,
-        WifiConnectUtil.WifiConnectResultListener, VerificationUtils.VerificationResult, BarCodeAPI.IBarCodeData {
+        WifiConnectUtil.WifiConnectResultListener, VerificationUtils.VerificationResult, SoftDecodingAPI.IBarCodeData {
     private TextView tv01, tv02, tv03, tv04, tv05, tv06, tv07, tv08, tv09, tv10,
             tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20, tv21, tv22, title_text;
     private String[] tvName;//标识字段的名称集合
@@ -106,6 +106,11 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     private LoadingDialog mDialog;
     private boolean isFront = false;//判断当前页面是否在前台
     private int style = 0;//1代表hpv,2代表细胞学，3代表基因，4代表dna,5代表其他
+
+    SoftDecodingAPI api;
+    volatile boolean isScanning = false;
+    private AsyncParseSFZ asyncParseSFZ;
+
     private Handler mhandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -132,8 +137,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         initEditTextClick();
         WifiConnectUtil.Companion.getInstance().setWifiConnectListener(this, null);
         VerificationUtils.getChange(et_pRequiredHPV,et_pRequiredCytology,et_pRequiredGene,et_pRequiredDNA,et_pRequiredOther,et_pRequiredID);
-        cw.BarCodeAPI(this).setOnBarCodeDataListener(this);
-        cw.FingerPrintAPI().Scanner(this);
+        api = new SoftDecodingAPI(ScanShowActivity.this, this);
         getData();
     }
 
@@ -386,7 +390,6 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
             public void run() {
                 //按键扫描
                 Log.e("code", s);
-//                tvShow.setText(s);
                 switch (style){
                     case 0:
                         Toasty.normal(ScanShowActivity.this,"请重新点击扫描按钮");
@@ -427,7 +430,8 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
      */
     private void getData() {
 
-        cw.AsyncParseSFZ(this).setOnReadSFZListener(new AsyncParseSFZ.OnReadSFZListener() {
+        asyncParseSFZ = new AsyncParseSFZ(getMainLooper(), this);
+        asyncParseSFZ.setOnReadSFZListener(new AsyncParseSFZ.OnReadSFZListener() {
 
             @Override
             public void onReadSuccess(ParseSFZAPI.People people) {
@@ -560,9 +564,10 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
     protected void onPause() {
         super.onPause();
         id = -1;
-        cw.BarCodeAPI(ScanShowActivity.this).CloseScanning();
-        //建议在onPause里或者监听屏幕息屏里放，息屏后可以省电
-        cw.BarCodeAPI(ScanShowActivity.this).closeBarCodeReceiver();
+        api.CloseScanning();
+        api.closeBarCodeReceiver();
+        MyApplication.getInstance().setParam(ScanShowActivity.this, "isScanning", isScanning);
+        asyncParseSFZ.closeIDCardSerialPort(cw.getDeviceModel());
     }
 
     private void initClick() {
@@ -604,21 +609,25 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
             case R.id.iv_scanhpv:
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 1);
                 style = 1;
-                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                cw.BarCodeAPI(ScanShowActivity.this).scan();
+                api.scan();
                 break;
             case R.id.iv_scandna:
                 style = 4;
-                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                cw.BarCodeAPI(ScanShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 4);
                 break;
             case R.id.iv_scanxbx:
                 style = 2;
-                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                cw.BarCodeAPI(ScanShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 2);
                 break;
             case R.id.iv_scanjyjc:
                 style = 3;
-                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                cw.BarCodeAPI(ScanShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 3);
                 break;
             case R.id.bt_save:
@@ -631,11 +640,13 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
                 break;
             case R.id.iv_scanother:
                 style = 5;
-                cw.BarCodeAPI(ScanShowActivity.this).scan();
+//                cw.BarCodeAPI(ScanShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 5);
                 break;
             case R.id.iv_scanidcard:
-                cw.AsyncParseSFZ(getApplicationContext()).readSFZ();
+//                cw.AsyncParseSFZ(getApplicationContext()).readSFZ();
+                asyncParseSFZ.readSFZ(ParseSFZAPI.THIRD_GENERATION_CARD);
                 break;
             default:
                 break;
@@ -746,15 +757,9 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         super.onResume();
         isFront = true;
         //建议在onResume里放，息屏后可以省电
-        cw.BarCodeAPI(ScanShowActivity.this).openBarCodeReceiver();
-
-
-
-
-        cw.AsyncParseSFZ(this).openSerialPort(this);
-        boolean state = cw.BarCodeAPI(ScanShowActivity.this).isScannerServiceRunning(ScanShowActivity.this);
-
-        Log.e("Scanshow",state + "0000000");
+//        cw.BarCodeAPI(ScanShowActivity.this).openBarCodeReceiver();
+        api.openBarCodeReceiver();
+        asyncParseSFZ.openIDCardSerialPort(cw.getDeviceModel());
     }
 
 
@@ -958,7 +963,7 @@ public class ScanShowActivity extends AppCompatActivity implements MyDialog.OnDi
         dismissDiolog();
         stopAnim();
         //关闭身份证串口，省电
-        cw.AsyncParseSFZ(this).closeSerialPort();
+        asyncParseSFZ.closeIDCardSerialPort();
     }
 
     @Override

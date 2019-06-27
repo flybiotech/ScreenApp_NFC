@@ -30,8 +30,7 @@ import com.Manager.DataManager;
 import com.activity.BaseActivity;
 import com.activity.LiveVidActivity;
 import com.activity.R;
-import com.cw.cwsdk.cw;
-import com.cw.cwsdk.u8API.barcode.BarCodeAPI;
+import com.cw.barcodesdk.SoftDecodingAPI;
 import com.logger.LogHelper;
 import com.model.DevModel;
 import com.screening.model.BarcodeBean;
@@ -79,7 +78,7 @@ import io.reactivex.schedulers.Schedulers;
  *
  * @param
  */
-public class ShowActivity extends BaseActivity implements View.OnClickListener, MyDialog.OnDialogButtonClickListener, VerificationUtils.VerificationResult, WifiConnectUtil.WifiConnectResultListener , BarCodeAPI.IBarCodeData {
+public class ShowActivity extends BaseActivity implements View.OnClickListener, MyDialog.OnDialogButtonClickListener, VerificationUtils.VerificationResult, WifiConnectUtil.WifiConnectResultListener , SoftDecodingAPI.IBarCodeData{
     private TextView tv01, tv02, tv03, tv04, tv05, tv06, tv07, tv08, tv09, tv10, tv11, tv12, tv13, tv14, tv15, tv16, tv17, tv18, tv19, tv20, tv21, tv22, title_text;
     private String[] tvName;//标识字段的名称集合
     private EditText et_pId, et_pName, et_pAge, et_pSex, et_pPhone, et_pLocalPhone, et_pDate, et_pOccupation, et_smoking, et_pSexualpartners, et_pGestationaltimes,
@@ -109,6 +108,8 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
     private boolean isFront = false;//判断当前页面是否在前台
     private int style = 0;//1代表hpv,2代表细胞学，3代表基因，4代表dna,5代表其他
 
+
+    SoftDecodingAPI api;
     private Handler mhandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -299,36 +300,7 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onBarCodeData(String s) {
-        mhandler.post(new Runnable() {
-            @SuppressLint("StringFormatMatches")
-            @Override
-            public void run() {
-                //按键扫描
-                Log.e("code", s);
-//                tvShow.setText(s);
-                switch (style){
-                    case 0:
-                        Toasty.normal(ShowActivity.this,"请重新点击扫描按钮");
-                        break;
-                    case 1:
-                        et_pRequiredHPV.setText(s);
-                        break;
-                    case 2:
-                        et_pRequiredCytology.setText(s);
-                        break;
-                    case 3:
-                        et_pRequiredGene.setText(s);
-                        break;
-                    case 4:
-                        et_pRequiredDNA.setText(s);
-                        break;
-                    case 5:
-                        et_pRequiredOther.setText(s);
-                        break;
-                }
 
-            }
-        });
     }
 
     @Override
@@ -428,7 +400,7 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
         initEditTextClick();
         WifiConnectUtil.Companion.getInstance().setWifiConnectListener(this, null);
         VerificationUtils.getChange(et_pRequiredHPV,et_pRequiredCytology,et_pRequiredGene,et_pRequiredDNA,et_pRequiredOther,et_pRequiredID);
-        cw.BarCodeAPI(this).setOnBarCodeDataListener(this);
+        api = new SoftDecodingAPI(ShowActivity.this, this);
     }
 
     private void initEditTextClick() {
@@ -506,7 +478,8 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
     protected void onResume() {
         super.onResume();
         isFront = true;
-        cw.BarCodeAPI(ShowActivity.this).openBarCodeReceiver();
+//        cw.BarCodeAPI(ShowActivity.this).openBarCodeReceiver();
+        api.openBarCodeReceiver();
     }
 
 
@@ -631,26 +604,26 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
             case R.id.iv_scanhpv:
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 1);
                 style = 1;
-                cw.BarCodeAPI(ShowActivity.this).scan();
+                api.scan();
                 break;
             case R.id.iv_scandna:
                 style = 4;
-                cw.BarCodeAPI(ShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 4);
                 break;
             case R.id.iv_scanxbx:
                 style = 2;
-                cw.BarCodeAPI(ShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 2);
                 break;
             case R.id.iv_scanjyjc:
                 style = 3;
-                cw.BarCodeAPI(ShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 3);
                 break;
             case R.id.iv_scanother:
                 style = 5;
-                cw.BarCodeAPI(ShowActivity.this).scan();
+                api.scan();
 //                startActivityForResult(new Intent(this, ScanningActivity.class), 5);
                 break;
             default:
@@ -1121,9 +1094,8 @@ public class ShowActivity extends BaseActivity implements View.OnClickListener, 
         super.onPause();
         msgIntent = null;
         id = -1;
-        cw.BarCodeAPI(ShowActivity.this).CloseScanning();
-        //建议在onPause里或者监听屏幕息屏里放，息屏后可以省电
-        cw.BarCodeAPI(ShowActivity.this).closeBarCodeReceiver();
+        api.CloseScanning();
+        api.closeBarCodeReceiver();
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,8 +17,6 @@ import android.support.v7.widget.ViewUtils;
 import android.util.Log;
 
 import com.activity.R;
-//import com.huashi.bluetooth.HSBlueApi;
-import com.cw.cwsdk.cw;
 import com.logger.LogHelper;
 import com.logger.TxtFormatStrategy;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -41,6 +40,8 @@ import java.util.List;
 
 import io.reactivex.functions.Consumer;
 import io.reactivex.plugins.RxJavaPlugins;
+
+import static com.screening.uitls.SPUtils.FILE_NAME;
 
 
 /**
@@ -68,6 +69,7 @@ public class MyApplication extends LitePalApplication{
         initBlueApi();
         initBlueState();
         serRxJavaErrorHandler();
+
 //        if (LeakCanary.isInAnalyzerProcess(this)) {
 //            // This process is dedicated to LeakCanary for heap analysis.
 //            // You should not init your app in this process.
@@ -156,33 +158,57 @@ public class MyApplication extends LitePalApplication{
 
     }
 
-
-    @Override
-    public void onTerminate() {
-        // 程序终止的时候执行
-        Log.d(TAG, "onTerminate");
-        cw.setDownGpioSTM32();
-        super.onTerminate();
+    /**
+     * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
+     *
+     * @param context
+     * @param key
+     * @param object
+     */
+    public void setParam(Context context, String key, Object object) {
+        String type = object.getClass().getSimpleName();
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        if ("String".equals(type)) {
+            editor.putString(key, (String) object);
+        } else if ("Integer".equals(type)) {
+            editor.putInt(key, (Integer) object);
+        } else if ("Boolean".equals(type)) {
+            editor.putBoolean(key, (Boolean) object);
+        } else if ("Float".equals(type)) {
+            editor.putFloat(key, (Float) object);
+        } else if ("Long".equals(type)) {
+            editor.putLong(key, (Long) object);
+        }
+        editor.commit();
     }
 
-    @Override
-    public void onLowMemory() {
-        // 低内存的时候执行
-        Log.d(TAG, "onLowMemory");
-        super.onLowMemory();
-    }
 
-    @Override
-    public void onTrimMemory(int level) {
-        // 程序在内存清理的时候执行
-        Log.d(TAG, "onTrimMemory");
-        super.onTrimMemory(level);
-    }
+    /**
+     * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
+     *
+     * @param context
+     * @param key
+     * @param defaultObject
+     * @return
+     */
+    public Object getParam(Context context, String key, Object defaultObject) {
+        String type = defaultObject.getClass().getSimpleName();
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        Log.d(TAG, "onConfigurationChanged");
-        super.onConfigurationChanged(newConfig);
+        if ("String".equals(type)) {
+            return sp.getString(key, (String) defaultObject);
+        } else if ("Integer".equals(type)) {
+            return sp.getInt(key, (Integer) defaultObject);
+        } else if ("Boolean".equals(type)) {
+            return sp.getBoolean(key, (Boolean) defaultObject);
+        } else if ("Float".equals(type)) {
+            return sp.getFloat(key, (Float) defaultObject);
+        } else if ("Long".equals(type)) {
+            return sp.getLong(key, (Long) defaultObject);
+        }
+
+        return null;
     }
 
 

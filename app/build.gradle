@@ -129,8 +129,15 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
     implementation 'q.rorbin:VerticalTabLayout:1.2.5'
-    //依赖 U8 SDK
-    implementation(name: 'cwsdk-release', ext: 'aar')
+    //扫码开发包
+    //Barcode SDK
+    implementation(name: 'barcode_sdk_20190429', ext: 'aar')
+    //身份证开发包,需要依赖串口开发包
+    //IDcard SDK,need SerialPort SDK
+    implementation(name: 'idcard_sdk_20190617', ext: 'aar')
+    //串口开发包
+    //SerialPort SDK
+    implementation(name: 'serialport_sdk_20190612', ext: 'aar')
 }
 repositories {
     mavenCentral()
